@@ -310,67 +310,17 @@
     }
   }
 
-  function mountNeoCommandDock() {
-    if (document.querySelector('.neo-command-dock')) {
-      return;
-    }
-
-    var dock = document.createElement('div');
-    dock.className = 'neo-command-dock';
-    dock.innerHTML = '<span class="neo-chip">Nextgen UI</span><button type="button" class="neo-command-btn" aria-haspopup="dialog">Open Quick Actions</button>';
-    document.body.appendChild(dock);
-
-    var modal = document.createElement('dialog');
-    modal.className = 'neo-command-modal';
-    modal.innerHTML = [
-      '<article class="neo-modal-card">',
-      '<header><strong>Raigad Mixboxing Command Deck</strong></header>',
-      '<p style="line-height:1.5;margin:0 0 10px;color:#d1d5db">Navigate faster using the Pico.css powered minimal command layer.</p>',
-      '<nav class="neo-actions">',
-      '<a role="button" href="index.html">Home Arena</a>',
-      '<a role="button" href="gallery.html" class="secondary">Photo Gallery</a>',
-      '<a role="button" href="calendar.html" class="secondary">Event Calendar</a>',
-      '<a role="button" href="contact-us.html" class="contrast">Contact Desk</a>',
-      '</nav>',
-      '<footer><button type="button" class="secondary neo-close">Close</button></footer>',
-      '</article>'
-    ].join('');
-    document.body.appendChild(modal);
-
-    dock.querySelector('.neo-command-btn').addEventListener('click', function () {
-      if (typeof modal.showModal === 'function') {
-        modal.showModal();
-      }
+  function applyInformationLayout() {
+    var sectionLike = document.querySelectorAll('.about-us, .bio-section, .panel, .details, .table-container, .contact-box, .calendar, .month');
+    sectionLike.forEach(function (node) {
+      node.classList.add('p-4', 'md:p-6');
     });
 
-    var closeBtn = modal.querySelector('.neo-close');
-    if (closeBtn) {
-      closeBtn.addEventListener('click', function () {
-        modal.close();
-      });
-    }
-  }
-
-  function applyPageIdentityChips() {
-    var titleNode = document.querySelector('h1, .main-heading, .about-title, .gallery-title, .title');
-    if (!titleNode || titleNode.dataset.pageChipApplied === 'true') {
-      return;
-    }
-
-    var chip = document.createElement('span');
-    chip.textContent = 'Neo Edition';
-    chip.style.display = 'inline-flex';
-    chip.style.marginLeft = '10px';
-    chip.style.padding = '2px 10px';
-    chip.style.borderRadius = '999px';
-    chip.style.fontSize = '12px';
-    chip.style.letterSpacing = '0.08em';
-    chip.style.textTransform = 'uppercase';
-    chip.style.background = 'rgba(34,211,238,.14)';
-    chip.style.border = '1px solid rgba(34,211,238,.45)';
-    chip.style.color = '#67e8f9';
-    titleNode.appendChild(chip);
-    titleNode.dataset.pageChipApplied = 'true';
+    document.querySelectorAll('h1, h2, h3').forEach(function (h) {
+      if (!h.style.marginBottom) {
+        h.style.marginBottom = '0.6rem';
+      }
+    });
   }
 
   function init() {
@@ -387,8 +337,7 @@
     enhanceMediaCards();
     applyRevealAnimations();
     highlightActiveNavLink();
-    applyPageIdentityChips();
-    mountNeoCommandDock();
+    applyInformationLayout();
     upgradeButtons();
   }
 

@@ -1,67 +1,39 @@
-# Raigad Mixboxing — Nextgen Website Revamp
+# Raigad Mixboxing — Modernized Multi-Page Website
 
-This repository now ships a **2026-style visual system** across every page, with a shared enhancement layer and Cloudflare Workers deployment.
+This repo now uses a cleaner, less cluttered design system applied globally across all pages.
 
-## What changed
+## Styling/Theming direction
 
-- A unified **nextgen theme** was added in `assets/css/overhaul.css`:
-  - layered aurora gradients
-  - glassmorphism shells
-  - neon accents and modern nav hover states
-  - persistent command-dock styling
-- Global UX upgrades were expanded in `assets/js/site-enhancements.js`:
-  - dynamic loading of **Pico.css** (modern, minimal UI library)
-  - floating “Quick Actions” command dock with drawer navigation
-  - page identity “Neo Edition” badges
-  - existing accessibility/performance enhancements kept intact
-- Cloudflare Worker deployment support was added:
-  - `wrangler.toml`
-  - `worker/index.js`
-  - pretty URL redirects (`/about-us` -> `/about-us.html`)
-  - security headers and caching rules
+Instead of adding more Tailwind-specific UI patterns, the site now uses:
 
-## Deploy to Cloudflare Workers
+- a shared custom design layer in `assets/css/overhaul.css`
+- runtime-loaded **Pico.css** (`@picocss/pico`) as a modern, minimal styling alternative
+- improved spacing, readability, and block consistency for all content pages
 
-### 1) Install Wrangler
+## What was improved
+
+- Unified page surfaces for all common content blocks (`about`, `bio`, `panel`, `details`, `table`, `calendar`, `contact`) with cleaner borders, softer shadows, and consistent radius.
+- Better information presentation with stronger text hierarchy and readable paragraph/list rhythm.
+- Cleaner navigation treatment and restrained interactions (no extra chips, no floating command widgets).
+- Enhancements are global because all pages already include `assets/css/overhaul.css` and `assets/js/site-enhancements.js`.
+
+## Cloudflare Worker deployment
+
+The repository includes Workers deployment files:
+
+- `worker/index.js`
+- `wrangler.toml`
+
+### Deploy
 
 ```bash
 npm i -g wrangler
-```
-
-### 2) Authenticate
-
-```bash
 wrangler login
-```
-
-### 3) Deploy
-
-```bash
 wrangler deploy
 ```
 
-This publishes the static site using Workers Assets, with the Worker acting as an edge router + header/caching layer.
-
-## Local preview
+### Local preview
 
 ```bash
 wrangler dev
 ```
-
-Open the local URL shown in terminal and test all pages:
-
-- `/`
-- `/about-us`
-- `/gallery`
-- `/founder`
-- `/contact-us`
-- `/calendar`
-- committee/official pages
-
-## Project structure
-
-- `*.html` — all site pages
-- `assets/css/overhaul.css` — global design system + nextgen theme
-- `assets/js/site-enhancements.js` — global interaction/enhancement layer
-- `worker/index.js` — Cloudflare Worker edge handler
-- `wrangler.toml` — deployment configuration
