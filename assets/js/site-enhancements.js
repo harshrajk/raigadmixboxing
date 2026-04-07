@@ -10,32 +10,6 @@
   ].join(', ');
 
   /* ── Theme Toggle ───────────────────────────────────────── */
-  function initThemeToggle() {
-    var btn = document.querySelector('.theme-toggle');
-    if (!btn) return;
-
-    var saved = localStorage.getItem('rmba-theme');
-    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var theme = saved || (prefersDark ? 'dark' : 'light');
-
-    applyTheme(theme);
-
-    btn.addEventListener('click', function () {
-      var current = document.documentElement.getAttribute('data-theme') || 'dark';
-      var next = current === 'dark' ? 'light' : 'dark';
-      applyTheme(next);
-      localStorage.setItem('rmba-theme', next);
-    });
-  }
-
-  function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    var btn = document.querySelector('.theme-toggle');
-    if (btn) {
-      btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-    }
-  }
-
   /* ── Scroll-shrink Navbar ───────────────────────────────── */
   function initScrollNavShrink() {
     var nav = document.querySelector('.page-top-nav');
@@ -478,7 +452,6 @@
   function init() {
     normalizeMediaAttrs();
     stylePageShell();
-    initThemeToggle();
     initScrollNavShrink();
     setupPageNav();
     markZoomableImages();
