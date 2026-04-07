@@ -299,8 +299,33 @@
     });
   }
 
+
+  function injectPicoRuntime() {
+    if (!document.querySelector('link[data-pico-theme="true"]')) {
+      var theme = document.createElement('link');
+      theme.rel = 'stylesheet';
+      theme.href = 'https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css';
+      theme.setAttribute('data-pico-theme', 'true');
+      document.head.appendChild(theme);
+    }
+  }
+
+  function applyInformationLayout() {
+    var sectionLike = document.querySelectorAll('.about-us, .bio-section, .panel, .details, .table-container, .contact-box, .calendar, .month');
+    sectionLike.forEach(function (node) {
+      node.classList.add('p-4', 'md:p-6');
+    });
+
+    document.querySelectorAll('h1, h2, h3').forEach(function (h) {
+      if (!h.style.marginBottom) {
+        h.style.marginBottom = '0.6rem';
+      }
+    });
+  }
+
   function init() {
     normalizeMediaAttrs();
+    injectPicoRuntime();
     stylePageShell();
     setupPageNav();
     markZoomableImages();
@@ -312,6 +337,7 @@
     enhanceMediaCards();
     applyRevealAnimations();
     highlightActiveNavLink();
+    applyInformationLayout();
     upgradeButtons();
   }
 

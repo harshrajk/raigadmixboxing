@@ -498,3 +498,116 @@ img {
     scroll-behavior: auto !important;
   }
 }
+
+/* === Minimal modern layer (Tailwind alternative: Pico.css) === */
+:root {
+  --clean-bg: #0b0f16;
+  --clean-surface: rgba(18, 24, 36, 0.9);
+  --clean-surface-2: rgba(23, 30, 46, 0.92);
+  --clean-border: rgba(148, 163, 184, 0.24);
+  --clean-accent: #38bdf8;
+  --clean-text: #e5e7eb;
+  --clean-muted: #9ca3af;
+}
+
+body.ui-page {
+  background: linear-gradient(180deg, #0a0f18 0%, #0b1220 55%, #0c1322 100%);
+}
+
+body.ui-page::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(900px 260px at 50% -10%, rgba(56, 189, 248, 0.14), transparent 72%);
+  z-index: 0;
+}
+
+.ui-shell {
+  width: min(1180px, calc(100% - 24px));
+  margin-inline: auto;
+  padding: clamp(14px, 2vw, 24px);
+  border: 1px solid var(--clean-border);
+  border-radius: 18px;
+  background: linear-gradient(160deg, var(--clean-surface), var(--clean-surface-2));
+}
+
+.page-top-nav,
+header {
+  background: rgba(8, 13, 22, 0.92) !important;
+  border-bottom: 1px solid var(--clean-border) !important;
+  backdrop-filter: blur(10px);
+}
+
+.page-nav-links a,
+nav a {
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+.page-nav-links a:hover,
+nav a:hover {
+  background: rgba(56, 189, 248, 0.12) !important;
+  border-color: rgba(56, 189, 248, 0.45) !important;
+}
+
+.hero-box,
+.about-us,
+.bio-section,
+.profile-card,
+.member-card,
+.champion-card,
+.gallery-item,
+.panel,
+.admin-card,
+.contact-box,
+.table-container,
+.calendar,
+.month,
+.popup,
+.tech-panel,
+.details {
+  background: linear-gradient(160deg, rgba(15, 21, 33, 0.95), rgba(17, 24, 38, 0.92)) !important;
+  border: 1px solid var(--clean-border) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 8px 22px rgba(2, 6, 23, 0.35);
+}
+
+h1, h2, h3, .title, .main-heading, .about-title, .gallery-title {
+  letter-spacing: 0.02em;
+  color: var(--clean-text);
+}
+
+p, li, .details p, .bio-section p {
+  color: var(--clean-muted);
+  line-height: 1.7;
+}
+
+.member-card:hover,
+.profile-card:hover,
+.gallery-item:hover,
+.champion-card:hover,
+.admin-card:hover,
+.box:hover {
+  transform: translateY(-3px);
+  border-color: rgba(56, 189, 248, 0.45) !important;
+  box-shadow: 0 14px 28px rgba(2, 6, 23, 0.45);
+}
+
+.contact-bar {
+  border: 1px solid var(--clean-border) !important;
+  background: rgba(7, 12, 20, 0.88) !important;
+}
+
+.table-container table,
+.table-container th,
+.table-container td {
+  border-color: rgba(148, 163, 184, 0.2) !important;
+}
+
+@media (max-width: 760px) {
+  .ui-shell {
+    width: calc(100% - 14px);
+    padding: 12px;
+  }
+}

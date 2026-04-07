@@ -1,0 +1,10 @@
+name = "raigad-mixboxing"
+main = "worker/index.js"
+compatibility_date = "2026-04-07"
+workers_dev = true
+
+[assets]
+directory = "."
+binding = "ASSETS"
+html_handling = "drop-trailing-slash"
+not_found_handling = "single-page-application"
