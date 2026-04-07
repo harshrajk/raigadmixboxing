@@ -258,7 +258,7 @@ document.getElementById("icsExportBtn").addEventListener("click", function() {
       lines.push("BEGIN:VEVENT");
       lines.push("DTSTART;VALUE=DATE:" + dateStr);
       lines.push("DTEND;VALUE=DATE:" + dateStr);
-      lines.push("SUMMARY:" + ev.replace(/,/g, "\,"));
+      lines.push("SUMMARY:" + ev.split(",").join("\,"));
       lines.push("END:VEVENT");
     });
   });

@@ -980,6 +980,11 @@ input[type='button']:disabled,
   background: linear-gradient(180deg, rgba(16, 20, 29, 0.86), rgba(9, 12, 19, 0.82));
 }
 
+.gallery-masonry .section-title,
+.gallery-masonry .event-meta {
+  column-span: all;
+}
+
 .gallery-masonry .gallery-item {
   break-inside: avoid;
   margin-bottom: 14px;
@@ -1478,19 +1483,19 @@ body.has-page-nav .header {
 .reveal-enter.reveal-visible {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 500ms ease, transform 500ms ease;
+  transition: opacity 500ms ease var(--reveal-delay, 0s), transform 500ms ease var(--reveal-delay, 0s);
 }
 
 .reveal-enter-left.reveal-visible {
   opacity: 1;
   transform: translateX(0);
-  transition: opacity 500ms ease, transform 500ms ease;
+  transition: opacity 500ms ease var(--reveal-delay, 0s), transform 500ms ease var(--reveal-delay, 0s);
 }
 
 .reveal-enter-scale.reveal-visible {
   opacity: 1;
   transform: scale(1);
-  transition: opacity 500ms ease, transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: opacity 500ms ease var(--reveal-delay, 0s), transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1) var(--reveal-delay, 0s);
 }
 
 /* =============================================================

@@ -16,7 +16,7 @@
 
     var saved = localStorage.getItem('rmba-theme');
     var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var theme = saved || (prefersDark ? 'dark' : 'dark');
+    var theme = saved || (prefersDark ? 'dark' : 'light');
 
     applyTheme(theme);
 
@@ -321,9 +321,9 @@
         el.classList.add('reveal-enter');
       }
 
-      /* Staggered delay, capped at 0.5s */
+      /* Staggered delay via CSS custom property, capped at 0.5s */
       var delay = Math.min(i * 0.07, 0.5);
-      el.style.transitionDelay = delay + 's';
+      el.style.setProperty('--reveal-delay', delay + 's');
 
       observer.observe(el);
     });

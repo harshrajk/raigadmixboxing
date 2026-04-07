@@ -54,7 +54,10 @@
       var data = {};
       var inputs = form.querySelectorAll('input, textarea, select');
       inputs.forEach(function (input) {
-        if (input.name) {
+        if (!input.name) return;
+        if (input.type === 'radio' || input.type === 'checkbox') {
+          if (input.checked) data[input.name] = input.value;
+        } else {
           data[input.name] = input.value;
         }
       });
