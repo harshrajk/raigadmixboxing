@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Browse RMBA Technical Panel experts and committee roles for standards and regulations.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://raigadmixboxing.org/technical-panel.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Technical Panel - Raigad Mixboxing Association">
+<meta property="og:description" content="Browse RMBA Technical Panel experts and committee roles for standards and regulations.">
+<meta property="og:url" content="https://raigadmixboxing.org/technical-panel.html">
+<meta property="og:site_name" content="Raigad Mix Boxing Association">
+<meta property="og:image" content="https://raigadmixboxing.org/assets/images/logos/rmbf.png">
+<meta property="og:image:alt" content="Raigad Mix Boxing Association logo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Technical Panel - Raigad Mixboxing Association">
+<meta name="twitter:description" content="Browse RMBA Technical Panel experts and committee roles for standards and regulations.">
+<meta name="twitter:image" content="https://raigadmixboxing.org/assets/images/logos/rmbf.png">
+<meta name="twitter:site" content="@raigadmixboxing">
+<meta name="theme-color" content="#0b0f17">
+<link rel="icon" type="image/png" href="assets/images/logos/rmbf.png">
+
+
+
+
+<script defer src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config = { theme: { extend: { colors: { brandRed: "#dc2626" } } } };</script>
+<title>Technical Panel - Raigad Mixboxing Association</title>
+
+<style>
+
+/* Full page setup */
+body, html {
+margin:0;
+padding:0;
+height:100%;
+font-family:Arial, sans-serif;
+}
+
+/* Background image */
+.background{
+background-image:url('assets/images/backgrounds/bg-main.png');
+background-size:cover;
+background-position:center;
+width:100%;
+min-height:100vh;
+position:relative;
+}
+
+/* Overlay */
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+min-height:100%;
+background:
+radial-gradient(900px 360px at 88% 0%, rgba(220,38,38,0.2), transparent 72%),
+rgba(0,0,0,0.73);
+display:flex;
+flex-direction:column;
+padding:15px;
+box-sizing:border-box;
+overflow-y:auto;
+padding-bottom:80px; /* space for contact bar */
+}
+
+/* Logo */
+.logo-text{
+display:flex;
+align-items:center;
+gap:10px;
+flex-wrap:wrap;
+justify-content:center;
+margin-top:4px;
+}
+
+.logo-text img{
+width:60px;
+height:60px;
+border-radius:50%;
+}
+
+.logo-text h1{
+color:white;
+font-size:19px;
+margin:0;
+line-height:1.2;
+letter-spacing:.01em;
+}
+
+/* Title */
+.tech-panel{
+text-align:center;
+margin-top:14px;
+color:white;
+font-family:Georgia,serif;
+font-size:6vw;
+animation:glow 2s infinite alternate;
+font-size:46px;
+letter-spacing:2px;
+
+}
+
+@keyframes glow{
+from{ text-shadow:0 0 5px white; }
+to{ text-shadow:0 0 20px gold,0 0 30px gold; }
+}
+
+/* Divider */
+.divider{
+width:min(880px,100%);
+height:2px;
+border:0;
+background:linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+margin:14px auto;
+}
+
+/* Search */
+.search-box{
+text-align:center;
+margin:4px auto 14px;
+width:min(880px,100%);
+}
+
+.search-box input{
+width:100%;
+max-width:520px;
+padding:12px 14px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,0.22);
+font-size:15px;
+background:rgba(7,11,18,0.84);
+color:#fff;
+}
+
+.search-box input:focus{
+outline:none;
+border-color:rgba(220,38,38,0.7);
+box-shadow:0 0 0 3px rgba(220,38,38,0.24);
+}
+
+/* TABLE WRAPPER (important for mobile scroll) */
+.table-container{
+width:min(880px,100%);
+margin:0 auto;
+overflow-x:auto;
+border:1px solid rgba(255,255,255,0.12);
+border-radius:16px;
+background:linear-gradient(180deg, rgba(13,18,27,0.9), rgba(9,13,20,0.86));
+box-shadow:0 14px 26px rgba(0,0,0,0.36);
+}
+
+/* Table */
+table{
+width:100%;
+border-collapse:collapse;
+color:white;
+backdrop-filter:blur(6px);
+min-width:400px;
+}
+
+th,td{
+border:1px solid rgba(255,255,255,0.3);
+padding:12px;
+text-align:center;
+font-size:14px;
+}
+
+th{
+background:rgba(255,255,255,0.12);
+font-size:15px;
+text-transform:uppercase;
+letter-spacing:.05em;
+}
+
+/* Zebra */
+tr:nth-child(even){
+background:rgba(255,255,255,0.05);
+}
+
+/* Hover */
+tr:hover{
+background:rgba(255,255,255,0.12);
+}
+
+/* CONTACT BAR */
+.contact-bar{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:rgba(0,0,0,0.9);
+padding:10px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+z-index:999;
+}
+
+.contact-item{
+display:flex;
+align-items:center;
+color:white;
+font-size:13px;
+}
+
+.contact-item img{
+width:16px;
+margin-right:5px;
+}
+
+.contact-item a{
+color:white;
+text-decoration:none;
+}
+
+/* MOBILE OPTIMIZATION */
+@media(max-width:600px){
+
+.logo-text{
+justify-content:center;
+text-align:center;
+}
+
+.logo-text h1{
+font-size:16px;
+}
+
+.tech-panel{
+font-size:22px;
+}
+
+th,td{
+font-size:12px;
+padding:8px;
+}
+
+.contact-bar{
+flex-direction:column;
+align-items:center;
+gap:10px;
+}
+
+}
+
+</style>
+
+<script>
+
+/* Search function */
+function searchTable(){
+let input=document.getElementById("searchInput").value.toLowerCase();
+let rows=document.querySelectorAll("table tr");
+
+for(let i=1;i<rows.length;i++){
+let text=rows[i].innerText.toLowerCase();
+rows[i].style.display=text.includes(input) ? "" : "none";
+}
+
+}
+
+</script>
+
+<link rel="stylesheet" href="assets/css/overhaul.css">
+</head>
+
+<body class="bg-black text-white antialiased selection:bg-red-600/40 has-page-nav">
+<header class="page-top-nav">
+<div class="page-top-nav-inner">
+<a class="page-brand" href="index.html"><img src="assets/images/logos/rmbf.png" alt="Raigad Mix Boxing Association" loading="eager" fetchpriority="high"><span>Raigad Mix Boxing Association</span></a>
+<button class="page-nav-toggle" type="button" aria-expanded="false" aria-controls="pageNavLinks">Menu</button>
+<nav id="pageNavLinks" class="page-nav-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about-us.html">About us</a><a href="organiser.html">Organisation</a><a href="founder.html">Founder</a><a href="gallery.html">Gallery</a><a href="multimedia.html">Multimedia</a><a href="calendar.html">Calendar</a><a href="contact-us.html">Contact Us</a><a href="general-committee.html">General Committee</a></nav>
+</div>
+</header>
+
+
+<div class="background">
+
+<div class="overlay">
+
+<!-- Logo -->
+<div class="logo-text">
+<img src="assets/images/logos/rmbf.png" loading="lazy">
+<h1><i>Raigad<br>Mixboxing<br>Association</i></h1>
+</div>
+
+<!-- Title -->
+<div class="tech-panel">
+Technical Panel Committee
+</div>
+
+<div class="divider"></div>
+
+<!-- Search -->
+<div class="search-box">
+<input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search expert or role...">
+</div>
+
+<!-- Table -->
+<div class="table-container">
+<table>
+
+<tr>
+<th>Technical Experts</th>
+<th>Role</th>
+</tr>
+
+<tr>
+<td>Mr.Yogesh Ganpat Patil</td>
+<td>Chairman</td>
+
+</tr>
+
+<tr>
+<td>Mr.Milan Shivaji Jadhav</td>
+<td>Vice-Chairman</td>
+
+</tr>
+
+<tr>
+<td>Mr.Hitesh amachandra Bhagat</td>
+<td>Secretary</td>
+
+</tr>
+
+<tr>
+<td>Mstr.Rohan Jalendhar Shevale</td>
+<td>Vice-Secretary</td>
+
+</tr>
+
+<tr>
+<td>Miss.Druti Jayram lad</td>
+<td>Member</td>
+</tr>
+
+<tr>
+<td>Mrs.Pragati Ajay Gharat</td>
+<td>Member</td>
+</tr>
+
+</table>
+</div>
+    <br>
+    <br>
+    <br>
+
+
+
+
+
+<!-- Email -->
+<div class="contact-bar ring-1 ring-white/15 shadow-2xl">
+
+
+
+<div class="contact-item">
+<img src="assets/images/icons/mail.png" loading="lazy">
+<a href="mailto:raigadmixboxing@gmail.com">Raigad Mixboxing- Email</a>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<script defer src="assets/js/site-enhancements.js"></script>
+</body>
+</html>

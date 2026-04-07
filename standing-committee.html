@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="See RMBA Standing Committees including advisory, finance, media, and rules committees.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://raigadmixboxing.org/standing-committee.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Standing Committee - Raigad Mix Boxing Association">
+<meta property="og:description" content="See RMBA Standing Committees including advisory, finance, media, and rules committees.">
+<meta property="og:url" content="https://raigadmixboxing.org/standing-committee.html">
+<meta property="og:site_name" content="Raigad Mix Boxing Association">
+<meta property="og:image" content="https://raigadmixboxing.org/assets/images/logos/rmbf.png">
+<meta property="og:image:alt" content="Raigad Mix Boxing Association logo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Standing Committee - Raigad Mix Boxing Association">
+<meta name="twitter:description" content="See RMBA Standing Committees including advisory, finance, media, and rules committees.">
+<meta name="twitter:image" content="https://raigadmixboxing.org/assets/images/logos/rmbf.png">
+<meta name="twitter:site" content="@raigadmixboxing">
+<meta name="theme-color" content="#0b0f17">
+<link rel="icon" type="image/png" href="assets/images/logos/rmbf.png">
+
+
+
+
+
+<script defer src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config = { theme: { extend: { colors: { brandRed: "#dc2626" } } } };</script>
+<title>Standing Committee - Raigad Mix Boxing Association</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background-image:url("assets/images/logos/immage.png");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+/* overlay */
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(950px 380px at 12% 0%, rgba(220,38,38,0.2), transparent 70%),
+rgba(0,0,0,0.85);
+overflow-y:auto;
+padding-bottom:80px;
+}
+
+/* header */
+.top-part{
+padding:26px 18px;
+max-width:1100px;
+margin:0 auto;
+}
+
+.header{
+display:flex;
+align-items:center;
+flex-wrap:wrap;
+color:white;
+justify-content:center;
+gap:12px;
+}
+
+.logo{
+width:60px;
+height:60px;
+border-radius:50%;
+margin-right:12px;
+}
+
+.header-text{
+font-size:20px;
+font-family:Georgia, serif;
+letter-spacing:.02em;
+}
+
+/* heading */
+h1{
+text-align:center;
+color:white;
+font-size:48px;
+margin-top:14px;
+letter-spacing:2px;
+}
+
+p{
+color:#d6e0f0;
+text-align:center;
+max-width:800px;
+margin:8px auto 0;
+line-height:1.65;
+font-size:16px;
+}
+
+/* accordion */
+.accordion{
+width:min(1100px,95%);
+margin:auto;
+text-align:center;
+}
+
+.accordion button{
+width:100%;
+padding:16px 18px;
+color:white;
+font-size:19px;
+font-weight:700;
+letter-spacing:.01em;
+cursor:pointer;
+background:linear-gradient(180deg, rgba(29,34,47,0.84), rgba(13,17,25,0.82));
+border:1px solid rgba(255,255,255,0.2);
+margin-bottom:8px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.accordion button:hover{
+background:linear-gradient(180deg, rgba(44,50,66,0.9), rgba(17,21,30,0.86));
+border-color:rgba(243,197,90,0.5);
+}
+
+/* PANEL (AUTO HEIGHT FIX) */
+.panel{
+max-height:0;
+overflow:hidden;
+transition:max-height 0.45s ease;
+background:rgba(8,11,19,0.7);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:12px;
+margin-bottom:14px;
+}
+
+.panel-content{
+padding:16px;
+}
+
+/* MEMBER CARDS */
+.members{
+display:flex;
+flex-wrap:wrap;
+gap:14px;
+justify-content:center;
+}
+
+.member-card{
+width:160px;
+background:linear-gradient(180deg, rgba(20,26,36,0.9), rgba(9,12,18,0.85));
+padding:12px;
+border-radius:14px;
+text-align:center;
+color:white;
+transition:0.32s;
+border:1px solid rgba(255,255,255,0.16);
+box-shadow:0 10px 18px rgba(0,0,0,0.3);
+}
+
+.member-card:hover{
+transform:translateY(-7px);
+border-color:rgba(243,197,90,0.5);
+}
+
+.member-card img{
+width:100px;
+height:100px;
+border-radius:50%;
+object-fit:cover;
+border:2px solid rgba(255,255,255,0.75);
+}
+
+.member-name{
+font-size:13px;
+font-weight:bold;
+margin-top:9px;
+line-height:1.4;
+}
+
+.member-role{
+font-size:11px;
+opacity:0.9;
+color:#f3c55a;
+}
+
+/* CONTACT BAR */
+.contact-bar{
+position:fixed;
+bottom:10px;
+left:50%;
+transform:translateX(-50%);
+width:95%;
+background:rgba(0,0,0,0.85);
+backdrop-filter:blur(10px);
+padding:12px;
+display:flex;
+justify-content:space-around;
+flex-wrap:wrap;
+gap:10px;
+z-index:999;
+border-radius:12px;
+box-shadow:0 5px 25px rgba(0,0,0,0.8);
+}
+
+.contact-item{
+display:flex;
+align-items:center;
+color:white;
+font-size:14px;
+}
+
+.contact-item img{
+width:18px;
+margin-right:5px;
+}
+
+.contact-item a{
+color:white;
+text-decoration:none;
+}
+
+.contact-item a:hover{
+color:#e6d89c;
+}
+
+/* MOBILE PERFECT */
+@media(max-width:768px){
+
+.header{
+flex-direction:column;
+text-align:center;
+}
+
+.logo{
+margin-bottom:10px;
+width:50px;
+height:50px;
+}
+
+.header-text{
+font-size:18px;
+}
+
+h1{
+font-size:26px;
+}
+
+p{
+font-size:14px;
+padding:0 10px;
+}
+
+.accordion button{
+font-size:15px;
+padding:14px;
+}
+
+.member-card{
+width:46%;
+}
+
+.member-card img{
+width:70px;
+height:70px;
+}
+
+.top-part{
+padding:20px 10px;
+}
+
+}
+
+</style>
+<link rel="stylesheet" href="assets/css/overhaul.css">
+</head>
+
+<body class="bg-black text-white antialiased selection:bg-red-600/40 has-page-nav">
+<header class="page-top-nav">
+<div class="page-top-nav-inner">
+<a class="page-brand" href="index.html"><img src="assets/images/logos/rmbf.png" alt="Raigad Mix Boxing Association" loading="eager" fetchpriority="high"><span>Raigad Mix Boxing Association</span></a>
+<button class="page-nav-toggle" type="button" aria-expanded="false" aria-controls="pageNavLinks">Menu</button>
+<nav id="pageNavLinks" class="page-nav-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about-us.html">About us</a><a href="organiser.html">Organisation</a><a href="founder.html">Founder</a><a href="gallery.html">Gallery</a><a href="multimedia.html">Multimedia</a><a href="calendar.html">Calendar</a><a href="contact-us.html">Contact Us</a><a href="general-committee.html">General Committee</a></nav>
+</div>
+</header>
+
+
+<div class="overlay">
+
+<div class="top-part">
+
+<div class="header border border-white/10 bg-black/70 backdrop-blur-md rounded-xl px-4 py-3">
+<img src="assets/images/logos/rmbf.png" class="logo" loading="lazy">
+<div class="header-text">Raigad Mix-Boxing Association</div>
+</div>
+
+<h1>STANDING COMMITTEE</h1>
+
+<p>
+RMBA Standing Committees are created for the purpose of advising the RMBA GA, IMBF EB or the President.
+The council includes the following committees:
+</p>
+
+</div>
+
+<div class="accordion">
+
+<!-- COMMITTEE TEMPLATE -->
+
+<button onclick="togglePanel(this)">Advisory Committee</button>
+<div class="panel">
+<div class="panel-content">
+<div class="members">
+
+<div class="member-card shadow-lg shadow-black/40">
+<img src="assets/images/team/Miss. Pranali Patil Advisory.jpg" loading="lazy">
+<div class="member-name">Miss. Pranali Patil</div>
+</div>
+
+<div class="member-card shadow-lg shadow-black/40">
+<img src="assets/images/team/Mrs. Ad. Bhagyashree More Advisory.jpg" loading="lazy">
+<div class="member-name">Mrs. Ad. Bhagyashree More</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<button onclick="togglePanel(this)">Rules Committee</button>
+<div class="panel">
+<div class="panel-content">
+<div class="members">
+
+<div class="member-card shadow-lg shadow-black/40">
+<img src="assets/images/team/Mr. Vinayak Sakpal Rules.jpg" loading="lazy">
+<div class="member-name">Mr. Vinayak Sakpal</div>
+</div>
+
+<div class="member-card shadow-lg shadow-black/40">
+<img src="assets/images/logos/Swapnil Sonavane rules.jpg" loading="lazy">
+<div class="member-name">Mr. Swapnil Sonavane</div>
+</div>
+
+<div class="member-card shadow-lg shadow-black/40">
+<img src="assets/images/team/Ashvini.png" loading="lazy">
+<div class="member-name">Mrs. Ashvini Kharade</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<button onclick="togglePanel(this)">Coordination Committee</button>
+<div class="panel">
+<div class="panel-content">
+<div class="members">
+
+<div class="member-card shadow-lg shadow-black/40">
+<img src="assets/images/team/Mr. Atesh Mahendra Salvi(District representative) GC.jpeg" loading="lazy">
+<div class="member-name">Mstr. Atesh Mahendra Salvi</div>
+</div>
+
+<div class="member-card shadow-lg shadow-black/40">
+<img src="assets/images/team/Mukesh bhagat Administration,  Secretary (GC).jpeg" loading="lazy">
+<div class="member-name">Mr. Mukesh Milind Bhagat </div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<button onclick="togglePanel(this)">Finance Committee</button>
+<div class="panel">
+<div class="panel-content">
+<div class="members">
+
+<div class="member-card shadow-lg shadow-black/40">
+<img src="assets/images/team/Mr. Saurabh Rajendra Mestry(Treasurer) GC.jpeg" loading="lazy">
+<div class="member-name">Mr. Saurabh Rajendra Mestry</div>
+</div>
+
+<div class="member-card shadow-lg shadow-black/40">
+<img src="assets/images/team/Mr. Vikas Rajaram Bhoir(President) Genral Committe.jpeg" loading="lazy">
+<div class="member-name">Mr. Vikas Rajaram Bhoir</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<button onclick="togglePanel(this)">Media Committee</button>
+<div class="panel">
+<div class="panel-content">
+<div class="members">
+
+<div class="member-card shadow-lg shadow-black/40">
+<img src="assets/images/team/Mstr. Audhut Gharat media.jpg" loading="lazy">
+<div class="member-name">Mstr. Audhut Gharat</div>
+</div>
+
+<div class="member-card shadow-lg shadow-black/40">
+<img src="assets/images/team/Mr. Rohan Jalendhar shevale(Vice Treasurer)GC.jpeg" loading="lazy">
+<div class="member-name">Mr. Rohan Jalendhar Shevale</div>
+</div>
+
+<div class="member-card shadow-lg shadow-black/40">
+<img src="assets/images/team/Mrs. Tanvi Manekar media.jpg" loading="lazy">
+<div class="member-name">Mrs. Tanvi Mankar</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<button onclick="togglePanel(this)">Environment Committee</button>
+<div class="panel">
+<div class="panel-content">
+<div class="members">
+<div class="member-card shadow-lg shadow-black/40">
+<img src="assets/images/team/Mrs. Pragati Ajay gharat(member) GC.jpeg" loading="lazy">
+<div class="member-name">Mrs. Pragati Ajay Gharat</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<button onclick="togglePanel(this)">Information and Statistics Committee</button>
+<div class="panel">
+<div class="panel-content">
+<div class="members">
+
+<div class="member-card shadow-lg shadow-black/40">
+<img src="assets/images/logos/information.jpg" loading="lazy">
+<div class="member-name">Mrs.Sonal Ajay Tandel</div>
+<div class="member-role"> +91 8698098782 </div>
+
+</div>
+
+<div class="member-card shadow-lg shadow-black/40">
+<img src="assets/images/team/Mrs. Siddhi Sanjay Sakpal.jpg" loading="lazy">
+<div class="member-name">Mrs. Siddhi Sanjay Sakpal</div>
+<div class="member-role"> +91 9552043372 </div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<button onclick="togglePanel(this)">Medical Committee</button>
+<div class="panel">
+<div class="panel-content">
+<div class="members">
+<div class="member-card shadow-lg shadow-black/40">
+<img src="assets/images/team/Mr. Ajay  V. Tandel .jpeg" loading="lazy">
+<div class="member-name">Mr. Ajay  V. Tandel </div>
+</div>
+</div>
+</div>
+</div>
+
+
+<button onclick="togglePanel(this)">Encourage Committee</button>
+<div class="panel">
+<div class="panel-content">
+<div class="members">
+<div class="member-card shadow-lg shadow-black/40">
+<img src="assets/images/team/Mr. Amit Vishwanath Dalavi( joint Secretary)  GC.jpeg" loading="lazy">
+<div class="member-name">Mr. Amit Vishwanath Dalavi</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<button onclick="togglePanel(this)">Cultural Committee</button>
+<div class="panel">
+<div class="panel-content">
+<div class="members">
+<div class="member-card shadow-lg shadow-black/40">
+<img src="assets/images/team/Mr. yogesh Wargude.jpeg" loading="lazy">
+<div class="member-name">Mr. Yogesh Wargude</div>
+</div>
+
+<div class="member-card shadow-lg shadow-black/40">
+<img src="assets/images/team/Mr. Atesh Mahendra Salvi(District representative) GC.jpeg" loading="lazy">
+<div class="member-name">Mr. Atesh Mahendra Salvi</div>
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+<br><br><br><br>
+</div>
+
+
+<div class="contact-bar ring-1 ring-white/15 shadow-2xl">
+<div class="contact-item">
+<img src="assets/images/icons/mail.png" loading="lazy">
+<a href="mailto:raigadmixboxing@gmail.com">Raigad Mixboxing - Email</a>
+</div>
+</div>
+
+<script>
+function togglePanel(button){
+const panel = button.nextElementSibling;
+
+if(panel.style.maxHeight){
+panel.style.maxHeight = null;
+} else {
+panel.style.maxHeight = panel.scrollHeight + "px";
+}
+}
+</script>
+
+<script defer src="assets/js/site-enhancements.js"></script>
+</body>
+</html>

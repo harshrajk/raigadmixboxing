@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Explore RMBA organisation structure including committees, technical panels, referees, general assembly, and administration.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://raigadmixboxing.org/organiser.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Organisation - Raigad Mix Boxing Association">
+<meta property="og:description" content="Explore RMBA organisation structure including committees, technical panels, referees, general assembly, and administration.">
+<meta property="og:url" content="https://raigadmixboxing.org/organiser.html">
+<meta property="og:site_name" content="Raigad Mix Boxing Association">
+<meta property="og:image" content="https://raigadmixboxing.org/assets/images/logos/rmbf.png">
+<meta property="og:image:alt" content="Raigad Mix Boxing Association logo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Organisation - Raigad Mix Boxing Association">
+<meta name="twitter:description" content="Explore RMBA organisation structure including committees, technical panels, referees, general assembly, and administration.">
+<meta name="twitter:image" content="https://raigadmixboxing.org/assets/images/logos/rmbf.png">
+<meta name="twitter:site" content="@raigadmixboxing">
+<meta name="theme-color" content="#0b0f17">
+<link rel="icon" type="image/png" href="assets/images/logos/rmbf.png">
+
+
+
+
+
+<script defer src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config = { theme: { extend: { colors: { brandRed: "#dc2626" } } } };</script>
+<title>Organisation - Raigad Mix Boxing Association</title>
+
+<style>
+
+/* BODY */
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background-image:url("assets/images/logos/ChatGPT Image Mar 15, 2026, 04_49_29 PM.png");
+background-size:cover;
+background-position:center;
+min-height:100vh;
+}
+
+/* OVERLAY */
+
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(900px 400px at 14% 0%, rgba(220,38,38,0.2), transparent 70%),
+linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.76));
+backdrop-filter:blur(2px);
+z-index:0;
+}
+
+/* HEADER */
+
+.header{
+display:flex;
+align-items:center;
+color:white;
+padding:20px;
+flex-wrap:wrap; /* MOBILE FIX */
+}
+
+.logo{
+width:65px;
+height:65px;
+margin-right:15px;
+}
+
+.title{
+font-size:26px;
+font-weight:bold;
+}
+
+/* MAIN */
+
+.main{
+color:white;
+padding:30px 20px 120px;
+max-width:1100px;
+margin:0 auto;
+}
+
+/* HEADING */
+
+.main h1{
+font-size:52px;
+margin-bottom:6px;
+text-align:center;
+}
+
+.org-intro{
+max-width:720px;
+margin:0 auto 20px;
+text-align:center;
+font-size:16px;
+color:#d2dae8;
+line-height:1.55;
+}
+
+/* LINE */
+
+.line{
+width:220px;
+height:3px;
+background:white;
+margin:10px auto 40px auto;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+gap:16px;
+max-width:980px;
+margin:auto;
+}
+
+/* BOX */
+
+.org-card{
+display:flex;
+flex-direction:column;
+align-items:flex-start;
+gap:8px;
+padding:18px;
+text-decoration:none;
+color:white;
+transition:0.32s;
+background:linear-gradient(180deg, rgba(17,22,31,0.9), rgba(10,13,20,0.82));
+border:1px solid rgba(255,255,255,0.15);
+border-radius:16px;
+box-shadow:0 10px 20px rgba(0,0,0,0.28);
+}
+
+.org-card .card-title{
+font-size:20px;
+font-weight:800;
+letter-spacing:.01em;
+}
+
+.org-card .card-meta{
+font-size:13px;
+letter-spacing:.06em;
+text-transform:uppercase;
+padding:5px 9px;
+border-radius:999px;
+border:1px solid rgba(255,255,255,0.2);
+background:rgba(220,38,38,0.2);
+}
+
+.org-card:hover{
+transform:translateY(-8px);
+border-color:rgba(243,197,90,0.5);
+box-shadow:0 18px 28px rgba(0,0,0,0.42),0 0 16px rgba(220,38,38,0.22);
+}
+
+/* CONTACT BAR */
+
+.contact-bar{
+position:fixed;
+bottom:10px;
+left:50%;
+transform:translateX(-50%);
+width:95%;
+background:rgba(0,0,0,0.85);
+padding:12px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+border-radius:12px;
+}
+
+.contact-item{
+display:flex;
+align-items:center;
+color:white;
+font-size:14px;
+}
+
+.contact-item img{
+width:18px;
+margin-right:5px;
+}
+
+.contact-item a{
+color:white;
+text-decoration:none;
+}
+
+.contact-item a:hover{
+color:#ffe3a3;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+.header{
+flex-direction:column;
+text-align:center;
+}
+
+.logo{
+margin-bottom:10px;
+width:50px;
+height:50px;
+}
+
+.title{
+font-size:20px;
+}
+
+.main{
+padding:20px 15px;
+}
+
+.main h1{
+font-size:34px;
+}
+
+.org-intro{
+font-size:14px;
+}
+
+.line{
+width:150px;
+}
+
+.org-card .card-title{font-size:17px;}
+
+.org-card .card-meta{font-size:11px;}
+
+.contact-bar{
+flex-direction:column;
+text-align:center;
+}
+
+}
+
+</style>
+<link rel="stylesheet" href="assets/css/overhaul.css">
+</head>
+
+<body class="bg-black text-white antialiased selection:bg-red-600/40 has-page-nav">
+<header class="page-top-nav">
+<div class="page-top-nav-inner">
+<a class="page-brand" href="index.html"><img src="assets/images/logos/rmbf.png" alt="Raigad Mix Boxing Association" loading="eager" fetchpriority="high"><span>Raigad Mix Boxing Association</span></a>
+<button class="page-nav-toggle" type="button" aria-expanded="false" aria-controls="pageNavLinks">Menu</button>
+<nav id="pageNavLinks" class="page-nav-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about-us.html">About us</a><a href="organiser.html">Organisation</a><a href="founder.html">Founder</a><a href="gallery.html">Gallery</a><a href="multimedia.html">Multimedia</a><a href="calendar.html">Calendar</a><a href="contact-us.html">Contact Us</a><a href="general-committee.html">General Committee</a></nav>
+</div>
+</header>
+
+
+<div class="overlay"></div>
+
+<!-- HEADER -->
+
+<div class="header border border-white/10 bg-black/70 backdrop-blur-md rounded-xl px-4 py-3">
+<img src="assets/images/logos/rmbf.png" class="logo" loading="lazy">
+<div class="title tracking-wide"><b>Raigad Mix Boxing Association</b></div>
+</div>
+
+<!-- MAIN -->
+
+<div class="main max-w-6xl mx-auto px-4 sm:px-6">
+
+<h1>Organisation</h1>
+<p class="org-intro">Explore each RMBA wing including rules, management, officials, and operational teams that keep our competitions and training ecosystem running.</p>
+<div class="line rounded-full"></div>
+
+<div class="grid">
+
+<a href="technical-panel.html" class="org-card"><span class="card-title">Technical Panel</span><span class="card-meta">Rules and Standards</span></a>
+<a href="standing-committee.html" class="org-card"><span class="card-title">Standing Committee</span><span class="card-meta">Governance</span></a>
+<a href="organiser-committee.html" class="org-card"><span class="card-title">Organiser Committee</span><span class="card-meta">Event Delivery</span></a>
+
+<a href="official-referee.html" class="org-card"><span class="card-title">Official Referee</span><span class="card-meta">Officiating</span></a>
+<a href="general-assembly.html" class="org-card"><span class="card-title">General Assembly</span><span class="card-meta">Member Body</span></a>
+<a href="administration.html" class="org-card"><span class="card-title">Administration</span><span class="card-meta">Operations</span></a>
+
+</div>
+
+</div>
+
+<!-- CONTACT -->
+
+<div class="contact-bar ring-1 ring-white/15 shadow-2xl">
+<div class="contact-item">
+<img src="assets/images/icons/mail.png" loading="lazy">
+<a href="mailto:raigadmixboxing@gmail.com">Raigad Mixboxing - Email</a>
+</div>
+</div>
+
+<script defer src="assets/js/site-enhancements.js"></script>
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gallery - Raigad Mix-Boxing Association</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="View championship photos and event highlights from Raigad district mix boxing tournaments and association activities.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://raigadmixboxing.org/gallery.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gallery - Raigad Mix-Boxing Association">
+<meta property="og:description" content="View championship photos and event highlights from Raigad district mix boxing tournaments and association activities.">
+<meta property="og:url" content="https://raigadmixboxing.org/gallery.html">
+<meta property="og:site_name" content="Raigad Mix Boxing Association">
+<meta property="og:image" content="https://raigadmixboxing.org/assets/images/logos/rmbf.png">
+<meta property="og:image:alt" content="Raigad Mix Boxing Association logo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gallery - Raigad Mix-Boxing Association">
+<meta name="twitter:description" content="View championship photos and event highlights from Raigad district mix boxing tournaments and association activities.">
+<meta name="twitter:image" content="https://raigadmixboxing.org/assets/images/logos/rmbf.png">
+<meta name="twitter:site" content="@raigadmixboxing">
+<meta name="theme-color" content="#0b0f17">
+<link rel="icon" type="image/png" href="assets/images/logos/rmbf.png">
+
+
+
+
+<script defer src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config = { theme: { extend: { colors: { brandRed: "#dc2626" } } } };</script>
+
+<style>
+
+/* BODY */
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:
+radial-gradient(950px 420px at 12% 0%, rgba(255,0,0,0.22), transparent 72%),
+linear-gradient(135deg,#000000,#0b0b0b,#140000);
+color:white;
+}
+
+/* CONTENT */
+.content{
+position:relative;
+z-index:2;
+padding:22px 16px;
+max-width:1200px;
+margin:auto;
+padding-bottom:110px;
+}
+
+/* HEADER */
+.header{
+display:flex;
+align-items:center;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+}
+
+.header img{
+width:55px;
+height:55px;
+border-radius:50%;
+margin-right:10px;
+}
+
+.title{
+font-size:19px;
+font-weight:bold;
+}
+
+/* TITLE */
+.gallery-title{
+color:#FFD700;
+font-size:52px;
+font-family:Georgia;
+margin-top:14px;
+text-align:center;
+letter-spacing:2px;
+line-height:1;
+}
+
+/* DIVIDER */
+.line{
+width:min(760px, 100%);
+height:2px;
+background:linear-gradient(to right, transparent, gold, transparent);
+margin:14px auto 18px;
+}
+
+/* SECTION TITLE */
+.section-title{
+grid-column:1/-1;
+text-align:center;
+font-size:22px;
+color:#FFD700;
+margin-bottom:6px;
+line-height:1.5;
+letter-spacing:.02em;
+}
+
+/* GALLERY GRID */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:14px;
+margin-top:18px;
+border:1px solid rgba(255,255,255,0.14);
+padding:16px;
+border-radius:16px;
+background:linear-gradient(180deg, rgba(16,20,29,0.86), rgba(9,12,19,0.82));
+box-shadow:0 12px 24px rgba(0,0,0,0.32);
+}
+
+/* IMAGE CARD */
+.gallery-item{
+position:relative;
+width:100%;
+aspect-ratio:4/3; /* 3:4 horizontal */
+overflow:hidden;
+border-radius:12px;
+background:#111;
+border:1px solid rgba(255,215,0,0.3);
+transition:0.4s;
+}
+
+/* IMAGE */
+.gallery-item img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+transition:0.4s;
+	cursor:zoom-in;
+	filter:saturate(1.05) contrast(1.05);
+}
+
+/* HOVER */
+.gallery-item:hover{
+transform:translateY(-6px);
+box-shadow:0 0 20px rgba(255,215,0,0.6);
+}
+
+.gallery-item:hover img{
+transform:scale(1.1);
+}
+
+.gallery-item video{
+	width:100%;
+	height:100%;
+	object-fit:cover;
+	display:block;
+	border-radius:12px;
+}
+
+.event-meta{
+grid-column:1/-1;
+text-align:center;
+color:#dbe6f5;
+font-size:14px;
+margin-bottom:8px;
+letter-spacing:.04em;
+text-transform:uppercase;
+}
+
+/* CONTACT BAR */
+.contact-bar{
+position:fixed;
+bottom:10px;
+left:50%;
+transform:translateX(-50%);
+width:95%;
+background:rgba(0,0,0,0.85);
+backdrop-filter:blur(10px);
+padding:12px;
+display:flex;
+justify-content:space-around;
+flex-wrap:wrap;
+gap:10px;
+z-index:999;
+border-radius:12px;
+box-shadow:0 5px 25px rgba(0,0,0,0.8);
+}
+
+.contact-item{
+display:flex;
+align-items:center;
+color:white;
+font-size:14px;
+}
+
+.contact-item img{
+width:18px;
+margin-right:5px;
+}
+
+.contact-item a{
+color:white;
+text-decoration:none;
+}
+
+.contact-item a:hover{
+color:#e6d89c;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+.title{
+font-size:16px;
+}
+
+.section-title{
+font-size:16px;
+}
+
+.gallery-title{font-size:36px;}
+
+.contact-bar{
+flex-direction:column;
+align-items:center;
+gap:10px;
+}
+
+}
+
+</style>
+<link rel="stylesheet" href="assets/css/overhaul.css">
+</head>
+
+<body class="bg-black text-white antialiased selection:bg-red-600/40 has-page-nav">
+<header class="page-top-nav">
+<div class="page-top-nav-inner">
+<a class="page-brand" href="index.html"><img src="assets/images/logos/rmbf.png" alt="Raigad Mix Boxing Association" loading="eager" fetchpriority="high"><span>Raigad Mix Boxing Association</span></a>
+<button class="page-nav-toggle" type="button" aria-expanded="false" aria-controls="pageNavLinks">Menu</button>
+<nav id="pageNavLinks" class="page-nav-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about-us.html">About us</a><a href="organiser.html">Organisation</a><a href="founder.html">Founder</a><a href="gallery.html">Gallery</a><a href="multimedia.html">Multimedia</a><a href="calendar.html">Calendar</a><a href="contact-us.html">Contact Us</a><a href="general-committee.html">General Committee</a></nav>
+</div>
+</header>
+
+
+<div class="content mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+
+<!-- HEADER -->
+<div class="header border border-white/10 bg-black/70 backdrop-blur-md rounded-xl px-4 py-3">
+<img src="assets/images/logos/rmbf.png" loading="lazy">
+<div class="title tracking-wide">Raigad Mix-Boxing Association</div>
+</div>
+
+<!-- TITLE -->
+<div class="gallery-title">Gallery</div>
+
+<div class="line rounded-full"></div>
+
+<!-- GALLERY -->
+<div class="gallery">
+
+<h3 class="section-title">
+1st Raigad District Mix Boxing Championship Roha<br>
+Date- 20 August 2017
+</h3>
+<p class="event-meta">Roha, Raigad</p>
+
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p1 2.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p2 2.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p4 2.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p3 2.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p6 2.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p5 2.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p7 2.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p8 2.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p9 2.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p10 2.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p11 2.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p12 2.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p13 2.jpeg" loading="lazy"></div>
+
+
+</div>
+
+
+<div class="gallery">
+
+<h3 class="section-title">
+4th Raigad district mix boxing Championship
+<br> Date-06 August 2023
+<br>Address- Taluka krida sankul Dhatav Roha MIDC
+</h3>
+<p class="event-meta">Taluka Krida Sankul, Dhatav Roha MIDC</p>
+
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P1 1.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P2 1.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P3 1.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P4 1.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p5 1.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P6 1.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P7 1.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P8 1.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P9 1.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P10 1.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P11 1.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P12 1.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P13 1.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P14 1.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P15 1.jpeg" loading="lazy"></div>
+
+
+
+</div>
+
+<div class="gallery">
+
+<h3 class="section-title">
+5th Raigad District Mix Boxing Championship 2024 
+<br>Address- Goregaon Junior College Mangaon
+</h3>
+<p class="event-meta">Goregaon Junior College, Mangaon</p>
+
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P1 3.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P2 3.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P3 3.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P4 3.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p5 3.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P6 3.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P7 3.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P8 3.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P9 3.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P10 3.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P11 3.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P12 3.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P13 3.jpeg" loading="lazy"></div>
+
+
+</div>
+
+<div class="gallery">
+
+<h3 class="section-title">
+6th Raigad district mix boxing championship 2025 
+<br>
+Address- Deep City Panvel
+</h3>
+<p class="event-meta">Deep City, Panvel</p>
+
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p1 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P2 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P3 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P4 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p5 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P6 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P7 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P8 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P9 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P10 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P11 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P12 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P13 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P14 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P15 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P16 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P17 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P18 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P19 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P20 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P21 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P22.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P24.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P26.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P27.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P28.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P29.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P30.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P31.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P32.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P33.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P34.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P35.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P36.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p37.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><video src="assets/videos/V1 4.mp4" controls></video></div>
+
+
+</div>
+
+
+
+</div>
+
+<!-- CONTACT BAR -->
+<div class="contact-bar ring-1 ring-white/15 shadow-2xl">
+
+
+
+<div class="contact-item">
+<img src="assets/images/icons/mail.png" loading="lazy">
+<a href="mailto:raigadmixboxing@gmail.com">Raigad Mixboxing- Email</a>
+</div>
+
+</div>
+
+<script defer src="assets/js/site-enhancements.js"></script>
+</body>
+</html>
+

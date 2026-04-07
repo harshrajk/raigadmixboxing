@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Meet the General Committee leadership of Raigad Mix Boxing Association and their official roles.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://raigadmixboxing.org/general-committee.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Raigad Mix-Boxing Association">
+<meta property="og:description" content="Meet the General Committee leadership of Raigad Mix Boxing Association and their official roles.">
+<meta property="og:url" content="https://raigadmixboxing.org/general-committee.html">
+<meta property="og:site_name" content="Raigad Mix Boxing Association">
+<meta property="og:image" content="https://raigadmixboxing.org/assets/images/logos/rmbf.png">
+<meta property="og:image:alt" content="Raigad Mix Boxing Association logo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Raigad Mix-Boxing Association">
+<meta name="twitter:description" content="Meet the General Committee leadership of Raigad Mix Boxing Association and their official roles.">
+<meta name="twitter:image" content="https://raigadmixboxing.org/assets/images/logos/rmbf.png">
+<meta name="twitter:site" content="@raigadmixboxing">
+<meta name="theme-color" content="#0b0f17">
+<link rel="icon" type="image/png" href="assets/images/logos/rmbf.png">
+
+
+
+
+
+<script defer src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config = { theme: { extend: { colors: { brandRed: "#dc2626" } } } };</script>
+<title>Raigad Mix-Boxing Association</title>
+
+<style>
+
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+/* BODY */
+body, html{
+height:100%;
+font-family:Arial, sans-serif;
+background-image:url("assets/images/backgrounds/bg-main.png");
+background-size:cover;
+background-position:center;
+}
+
+/* Overlay */
+.overlay{
+position:relative;
+width:100%;
+min-height:calc(100vh - 82px);
+background:rgba(0,0,0,0.78);
+padding:24px 18px 120px;
+overflow:auto;
+animation:fadeIn 1.5s ease;
+}
+
+/* Fade Animation */
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+/* Header */
+.header{
+display:flex;
+align-items:center;
+gap:15px;
+flex-wrap:wrap;
+justify-content:center;
+margin:6px auto 22px;
+max-width:1100px;
+animation:slideDown 1s ease;
+}
+
+@keyframes slideDown{
+from{transform:translateY(-40px); opacity:0;}
+to{transform:translateY(0); opacity:1;}
+}
+
+.logo{
+width:65px;
+height:65px;
+border-radius:50%;
+box-shadow:0 0 15px #fff;
+}
+
+.title{
+color:white;
+font-size:18px;
+font-weight:bold;
+text-shadow:0 0 10px #fff;
+}
+
+/* Heading */
+.heading{
+text-align:center;
+margin-top:12px;
+color:white;
+font-family:Georgia, serif;
+font-size:48px;
+letter-spacing:2.4px;
+text-shadow:0 0 15px #ffffff, 0 0 25px #e6d89c;
+animation:fadeIn 2s ease;
+}
+
+/* Divider */
+.divider{
+width:min(540px,70%);
+height:2px;
+background:linear-gradient(to right, transparent, white, transparent);
+margin:18px auto 34px;
+}
+
+/* Grid */
+.committee{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+gap:22px;
+max-width:1100px;
+margin:auto;
+}
+
+/* Member */
+.member{
+text-align:center;
+padding:12px;
+border:1px solid rgba(255,255,255,0.12);
+border-radius:18px;
+background:linear-gradient(180deg, rgba(17,21,31,0.88), rgba(9,12,19,0.82));
+box-shadow:0 12px 26px rgba(0,0,0,0.36);
+transition:0.35s;
+animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+from{transform:translateY(40px); opacity:0;}
+to{transform:translateY(0); opacity:1;}
+}
+
+/* Image */
+.member img{
+width:100%;
+height:290px;
+object-fit:cover;
+border-radius:12px;
+border:1px solid rgba(255,255,255,0.35);
+transition:0.4s;
+}
+
+/* Name */
+.name{
+color:white;
+margin-top:14px;
+font-size:16px;
+line-height:1.35;
+display:flex;
+flex-direction:column;
+gap:7px;
+transition:0.3s;
+}
+
+.name strong{
+font-size:16px;
+font-weight:800;
+}
+
+.name span{
+display:inline-flex;
+align-self:center;
+font-size:12px;
+letter-spacing:0.06em;
+text-transform:uppercase;
+padding:5px 10px;
+border-radius:999px;
+border:1px solid rgba(255,255,255,0.22);
+background:rgba(220,38,38,0.22);
+}
+
+/* Hover Glow */
+.member:hover img{
+transform:scale(1.04);
+box-shadow:
+0 0 20px #fff,
+0 0 40px #e6d89c,
+0 0 60px rgba(255,255,255,0.5);
+}
+
+.member:hover .name{
+text-shadow:0 0 12px #fff;
+}
+
+.member:hover{
+transform:translateY(-7px);
+border-color:rgba(230,216,156,0.55);
+box-shadow:0 18px 28px rgba(0,0,0,0.45), 0 0 20px rgba(230,216,156,0.2);
+}
+
+/* CONTACT BAR */
+.contact-bar{
+position:fixed;
+bottom:12px;
+left:50%;
+transform:translateX(-50%);
+width:95%;
+background:rgba(0,0,0,0.85);
+backdrop-filter:blur(12px);
+padding:12px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+z-index:999;
+border-radius:14px;
+box-shadow:0 0 20px rgba(255,255,255,0.2);
+animation:slideUp 1s ease;
+}
+
+@keyframes slideUp{
+from{transform:translate(-50%,50px); opacity:0;}
+to{transform:translate(-50%,0); opacity:1;}
+}
+
+.contact-item{
+display:flex;
+align-items:center;
+color:white;
+font-size:14px;
+gap:8px;
+}
+
+.contact-item img{
+width:18px;
+}
+
+.contact-item a{
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
+
+.contact-item a:hover{
+color:#e6d89c;
+text-shadow:0 0 10px #e6d89c;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width:768px){
+
+.heading{
+font-size:28px;
+}
+
+.title{
+font-size:16px;
+}
+
+.logo{
+width:55px;
+height:55px;
+}
+
+.member img{
+height:250px;
+}
+
+.name{
+font-size:14px;
+}
+
+.name strong{
+font-size:14px;
+}
+
+.contact-bar{
+font-size:12px;
+padding:10px;
+}
+
+}
+
+@media (max-width:480px){
+
+.heading{
+font-size:24px;
+}
+
+.member img{
+height:220px;
+}
+
+}
+
+</style>
+<link rel="stylesheet" href="assets/css/overhaul.css">
+</head>
+
+<body class="bg-black text-white antialiased selection:bg-red-600/40 has-page-nav">
+<header class="page-top-nav">
+<div class="page-top-nav-inner">
+<a class="page-brand" href="index.html"><img src="assets/images/logos/rmbf.png" alt="Raigad Mix Boxing Association" loading="eager" fetchpriority="high"><span>Raigad Mix Boxing Association</span></a>
+<button class="page-nav-toggle" type="button" aria-expanded="false" aria-controls="pageNavLinks">Menu</button>
+<nav id="pageNavLinks" class="page-nav-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about-us.html">About us</a><a href="organiser.html">Organisation</a><a href="founder.html">Founder</a><a href="gallery.html">Gallery</a><a href="multimedia.html">Multimedia</a><a href="calendar.html">Calendar</a><a href="contact-us.html">Contact Us</a><a href="general-committee.html">General Committee</a></nav>
+</div>
+</header>
+
+
+<div class="overlay">
+
+<div class="header border border-white/10 bg-black/70 backdrop-blur-md rounded-xl px-4 py-3">
+<img src="assets/images/logos/rmbf.png" class="logo" loading="lazy">
+<div class="title tracking-wide">Raigad Mix-Boxing Association</div>
+</div>
+
+<div class="heading">
+General Committee
+</div>
+
+<div class="divider"></div>
+
+<div class="committee">
+
+<div class="member"><img src="assets/images/team/Mr. Vikas Rajaram Bhoir(President) Genral Committe.jpeg" loading="lazy"><div class="name"><strong>Mr. Vikas Rajaram Bhoir</strong><span>President of RMBA</span></div></div>
+
+<div class="member"><img src="assets/images/team/Mr. Hitesh Ramchandra Bhagat (Vice president) Genral committee.jpeg" loading="lazy"><div class="name"><strong>Mr. Hitesh Ramchandra Bhagat</strong><span>Vice President of RMBA</span></div></div>
+
+<div class="member"><img src="assets/images/team/Mukesh bhagat Administration,  Secretary (GC).jpeg" loading="lazy"><div class="name"><strong>Mr. Mukesh Milind Bhagat</strong><span>Secretary</span></div></div>
+
+<div class="member"><img src="assets/images/team/Mr. Atesh Mahendra Salvi(District representative) GC.jpeg" loading="lazy"><div class="name"><strong>Mr. Atesh Mahendra Salvi</strong><span>District Representative</span></div></div>
+
+<div class="member"><img src="assets/images/team/Mr. Saurabh Rajendra Mestry(Treasurer) GC.jpeg" loading="lazy"><div class="name"><strong>Mr. Saurabh Rajendra Mestry</strong><span>Treasurer</span></div></div>
+
+<div class="member"><img src="assets/images/team/Mr. Sanjay Tukaram Sakpal( Joint Secretary)  GC.jpeg" loading="lazy"><div class="name"><strong>Mr. Sanjay Tukaram Sakpal</strong><span>Joint Secretary</span></div></div>
+
+<div class="member"><img src="assets/images/team/Mr. Rohan Jalendhar shevale(Vice Treasurer)GC.jpeg" loading="lazy"><div class="name"><strong>Mr. Rohan Jalendhar Shevale</strong><span>Vice Treasurer</span></div></div>
+
+<div class="member"><img src="assets/images/team/Mr. Yogesh Ganpat Patil(Technical Director) GC.jpeg" loading="lazy"><div class="name"><strong>Mr. Yogesh Ganpat Patil</strong><span>Technical Director</span></div></div>
+
+<div class="member"><img src="assets/images/team/Mr. Amit Vishwanath Dalavi( joint Secretary)  GC.jpeg" loading="lazy"><div class="name"><strong>Mr. Amit Vishwanath Dalavi</strong><span>Joint Secretary</span></div></div>
+
+<div class="member"><img src="assets/images/team/Mrs. Sanjeevani Yogesh wargude(Member) GC.jpeg" loading="lazy"><div class="name"><strong>Mrs. Sanjeevani Yogesh Wargude</strong><span>Member</span></div></div>
+
+<div class="member"><img src="assets/images/team/Mrs. Pragati Ajay gharat(member) GC.jpeg" loading="lazy"><div class="name"><strong>Mrs. Pragati Ajay Gharat</strong><span>Member</span></div></div>
+
+</div>
+
+</div>
+
+<div class="contact-bar ring-1 ring-white/15 shadow-2xl">
+<div class="contact-item">
+<img src="assets/images/icons/mail.png" loading="lazy">
+<a href="mailto:raigadmixboxing@gmail.com">Raigad Mixboxing - Email</a>
+</div>
+</div>
+
+<script defer src="assets/js/site-enhancements.js"></script>
+</body>
+</html>

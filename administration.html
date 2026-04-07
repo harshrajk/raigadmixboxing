@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Administration - Raigad Mix Boxing Association</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Read about RMBA administration, operations leadership, and support structure for federation growth.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://raigadmixboxing.org/administration.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Administration - Raigad Mix Boxing Association">
+<meta property="og:description" content="Read about RMBA administration, operations leadership, and support structure for federation growth.">
+<meta property="og:url" content="https://raigadmixboxing.org/administration.html">
+<meta property="og:site_name" content="Raigad Mix Boxing Association">
+<meta property="og:image" content="https://raigadmixboxing.org/assets/images/logos/rmbf.png">
+<meta property="og:image:alt" content="Raigad Mix Boxing Association logo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Administration - Raigad Mix Boxing Association">
+<meta name="twitter:description" content="Read about RMBA administration, operations leadership, and support structure for federation growth.">
+<meta name="twitter:image" content="https://raigadmixboxing.org/assets/images/logos/rmbf.png">
+<meta name="twitter:site" content="@raigadmixboxing">
+<meta name="theme-color" content="#0b0f17">
+<link rel="icon" type="image/png" href="assets/images/logos/rmbf.png">
+
+
+
+
+
+<script defer src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config = { theme: { extend: { colors: { brandRed: "#dc2626" } } } };</script>
+<style>
+
+body{
+margin:0;
+background-image:url("assets/images/backgrounds/bg-main.png");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+font-family:Arial, sans-serif;
+}
+
+body::after{
+content:"";
+position:fixed;
+inset:0;
+background:linear-gradient(180deg, rgba(0,0,0,0.68), rgba(0,0,0,0.78));
+z-index:0;
+pointer-events:none;
+}
+
+/* Glass main box */
+
+.box{
+position:relative;
+z-index:1;
+margin:20px auto;
+width:min(1140px, calc(100% - 20px));
+margin-bottom:100px;
+min-height:calc(100vh - 120px);
+background:rgba(0,0,0,0.78);
+border-radius:20px;
+padding:24px;
+box-sizing:border-box;
+backdrop-filter:blur(8px);
+border:1px solid rgba(255,255,255,0.14);
+box-shadow:0 18px 34px rgba(0,0,0,0.42);
+}
+
+/* Header */
+
+.header{
+display:flex;
+align-items:center;
+flex-wrap:wrap;
+}
+
+/* Logo */
+
+.header img{
+width:70px;
+height:70px;
+border-radius:50%;
+object-fit:cover;
+margin-right:10px;
+}
+
+/* Title */
+
+.title{
+color:white;
+font-size:18px;
+font-weight:bold;
+}
+
+/* Admin title */
+
+.admin-title{
+color:white;
+font-size:48px;
+font-family:Georgia, serif;
+margin-top:6px;
+text-align:center;
+letter-spacing:2px;
+text-decoration:none;
+animation:glow 2.6s infinite alternate;
+}
+
+@keyframes glow{
+from{ text-shadow:0 0 5px white; }
+to{ text-shadow:0 0 20px gold,0 0 35px gold; }
+}
+
+/* Divider */
+
+.line{
+width:min(680px,100%);
+height:2px;
+background:white;
+margin:14px auto 22px;
+}
+
+/* Section */
+
+.admin-section{
+display:flex;
+gap:24px;
+align-items:flex-start;
+}
+
+/* Left side */
+
+.admin-info{
+display:grid;
+grid-template-columns:repeat(2, minmax(0, 1fr));
+gap:14px;
+width:min(520px,100%);
+}
+
+/* Cards */
+
+.admin-card{
+padding:14px;
+border-radius:14px;
+border:1px solid rgba(255,255,255,0.14);
+background:linear-gradient(180deg, rgba(15,20,29,0.86), rgba(9,12,19,0.82));
+box-shadow:0 10px 20px rgba(0,0,0,0.32);
+text-align:center;
+}
+
+.admin-card img{
+width:100%;
+max-width:210px;
+aspect-ratio:4/5;
+object-fit:cover;
+border-radius:10px;
+border:1px solid rgba(255,255,255,0.44);
+box-shadow:0 0 8px rgba(255,255,255,0.6);
+transition:all .3s;
+}
+
+.admin-card img:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px gold;
+}
+
+/* Name */
+
+.admin-name{
+color:#ffffff;
+font-size:18px;
+margin-top:10px;
+font-family:Georgia, serif;
+}
+
+.admin-role{
+color:#f3c55a;
+font-size:12px;
+letter-spacing:.08em;
+text-transform:uppercase;
+margin-top:6px;
+}
+
+/* Text */
+
+.admin-text{
+color:#dbe5f3;
+font-size:16px;
+line-height:1.75;
+flex:1;
+padding:18px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,0.12);
+background:linear-gradient(180deg, rgba(14,18,27,0.86), rgba(8,11,19,0.8));
+}
+
+.admin-text p{margin:0 0 12px;}
+
+.admin-text p:last-child{margin-bottom:0;}
+
+/* CONTACT BAR (FIXED + FLOATING STYLE) */
+.contact-bar{
+position:fixed;
+bottom:10px;
+left:50%;
+transform:translateX(-50%);
+width:95%;
+background:rgba(0,0,0,0.85);
+backdrop-filter:blur(10px);
+padding:12px;
+display:flex;
+justify-content:space-around;
+flex-wrap:wrap;
+gap:10px;
+z-index:999;
+border-radius:12px;
+box-shadow:0 5px 25px rgba(0,0,0,0.8);
+}
+
+.contact-item{
+display:flex;
+align-items:center;
+color:white;
+font-size:14px;
+}
+
+.contact-item img{
+width:18px;
+margin-right:5px;
+}
+
+.contact-item a{
+color:white;
+text-decoration:none;
+}
+
+.contact-item a:hover{
+color:#e6d89c;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.admin-title{
+font-size:28px;
+}
+
+.admin-section{
+flex-direction:column;
+align-items:center;
+text-align:left;
+}
+
+.admin-info{
+grid-template-columns:1fr;
+}
+
+.admin-text{
+font-size:15px;
+padding:14px;
+}
+
+.header{
+justify-content:center;
+text-align:center;
+}
+
+.title{
+font-size:16px;
+}
+
+}
+
+</style>
+
+<link rel="stylesheet" href="assets/css/overhaul.css">
+</head>
+
+<body class="bg-black text-white antialiased selection:bg-red-600/40 has-page-nav">
+<header class="page-top-nav">
+<div class="page-top-nav-inner">
+<a class="page-brand" href="index.html"><img src="assets/images/logos/rmbf.png" alt="Raigad Mix Boxing Association" loading="eager" fetchpriority="high"><span>Raigad Mix Boxing Association</span></a>
+<button class="page-nav-toggle" type="button" aria-expanded="false" aria-controls="pageNavLinks">Menu</button>
+<nav id="pageNavLinks" class="page-nav-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about-us.html">About us</a><a href="organiser.html">Organisation</a><a href="founder.html">Founder</a><a href="gallery.html">Gallery</a><a href="multimedia.html">Multimedia</a><a href="calendar.html">Calendar</a><a href="contact-us.html">Contact Us</a><a href="general-committee.html">General Committee</a></nav>
+</div>
+</header>
+
+
+<div class="box">
+
+<div class="admin-title">*ADMINISTRATION*</div>
+
+<div class="line rounded-full"></div>
+
+<div class="admin-section">
+
+<div class="admin-info">
+
+<div class="admin-card">
+<img src="assets/images/team/Mukesh bhagat Administration,  Secretary (GC).jpeg" loading="lazy">
+<div class="admin-name">Mr. Mukesh Milind Bhagat</div>
+<div class="admin-role">Secretary</div>
+</div>
+
+<div class="admin-card">
+<img src="assets/images/team/Shreyash Mhaskar Administration .jpeg" loading="lazy">
+<div class="admin-name">Mstr. Shreyash Rakesh Mhaskar</div>
+<div class="admin-role">Administration Support</div>
+</div>
+
+</div>
+
+<div class="admin-text">
+<p>The Raigad Mix Boxing Association (RMBA) was built to make combat sports training accessible to every student, regardless of background. Founded by Mr. Rakesh Suresh Mhaskar in Dhatav, Roha, RMBA combined discipline from boxing, kick boxing, and martial arts into one structured mix boxing system.</p>
+
+<p>Through sustained coaching, district-level initiatives, and federation-level support, the sport expanded across Maharashtra and then to multiple states in India. RMBA leadership focuses on athlete development, fair governance, self-defense awareness, and long-term opportunities for youth.</p>
+
+<p>Today, the administration team continues to strengthen operations, support tournaments, and maintain standards so members receive consistent training pathways from grassroots to national and international participation.</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="contact-bar ring-1 ring-white/15 shadow-2xl">
+
+<div class="contact-item">
+<img src="assets/images/icons/call.png" loading="lazy">
+<a href="tel:+918796231590">Mr. Mukesh Bhagat</a>
+</div>
+
+<div class="contact-item">
+<img src="assets/images/icons/call.png" loading="lazy">
+<a href="tel:+917397863416">Mstr. Shreyash Mhaskar</a>
+</div>
+
+<div class="contact-item">
+<img src="assets/images/icons/mail.png" loading="lazy">
+<a href="mailto:raigadmixboxing@gmail.com">Email</a>
+</div>
+
+</div>
+
+<script defer src="assets/js/site-enhancements.js"></script>
+</body>
+</html>

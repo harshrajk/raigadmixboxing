@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Watch multimedia highlights, videos, and visual moments from RMBA training sessions and district championships.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://raigadmixboxing.org/multimedia.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Multimedia - Raigad Mixboxing Association">
+<meta property="og:description" content="Watch multimedia highlights, videos, and visual moments from RMBA training sessions and district championships.">
+<meta property="og:url" content="https://raigadmixboxing.org/multimedia.html">
+<meta property="og:site_name" content="Raigad Mix Boxing Association">
+<meta property="og:image" content="https://raigadmixboxing.org/assets/images/logos/rmbf.png">
+<meta property="og:image:alt" content="Raigad Mix Boxing Association logo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Multimedia - Raigad Mixboxing Association">
+<meta name="twitter:description" content="Watch multimedia highlights, videos, and visual moments from RMBA training sessions and district championships.">
+<meta name="twitter:image" content="https://raigadmixboxing.org/assets/images/logos/rmbf.png">
+<meta name="twitter:site" content="@raigadmixboxing">
+<meta name="theme-color" content="#0b0f17">
+<link rel="icon" type="image/png" href="assets/images/logos/rmbf.png">
+
+
+
+
+
+<script defer src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config = { theme: { extend: { colors: { brandRed: "#dc2626" } } } };</script>
+<title>Multimedia - Raigad Mixboxing Association</title>
+
+<style>
+
+/* BODY */
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background-image:url("assets/images/logos/ChatGPT Image Mar 15, 2026, 05_22_11 PM.png");
+background-size:cover;
+background-position:center;
+}
+
+/* DARK OVERLAY */
+
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(900px 360px at 84% 0%, rgba(220,38,38,0.2), transparent 72%),
+rgba(0,0,0,0.68);
+z-index:0;
+}
+
+/* PAGE HERO */
+
+.media-hero{
+text-align:center;
+color:white;
+padding:12px 12px 4px;
+max-width:940px;
+margin:0 auto;
+}
+
+.media-kicker{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:6px 12px;
+border:1px solid rgba(255,255,255,0.18);
+border-radius:999px;
+background:rgba(255,255,255,0.06);
+font-size:12px;
+letter-spacing:.09em;
+text-transform:uppercase;
+}
+
+.media-kicker img{
+width:18px;
+height:18px;
+border-radius:50%;
+}
+
+.media-subtitle{
+margin-top:10px;
+font-size:15px;
+line-height:1.6;
+color:#d2dcec;
+}
+
+/* MAIN SECTION */
+
+.main{
+margin-top:18px;
+text-align:center;
+color:white;
+padding-bottom:100px;
+}
+
+/* HEADING */
+
+.main h1{
+font-size:52px;
+letter-spacing:2px;
+line-height:1;
+}
+
+/* WHITE LINE */
+
+.line{
+width:min(230px,85%);
+height:3px;
+background:white;
+margin:12px auto 26px auto;
+}
+
+/* PHOTO GRID */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+gap:16px;
+justify-content:center;
+max-width:1000px;
+margin:0 auto;
+}
+
+/* IMAGE STYLE */
+
+/* IMAGE CARD */
+.gallery-item{
+position:relative;
+width:100%;
+aspect-ratio:4/2;
+overflow:hidden;
+border-radius:12px;
+background:#111;
+border:1px solid rgba(255,215,0,0.3);
+transition:0.4s;
+box-shadow:0 10px 20px rgba(0,0,0,0.32);
+}
+
+/* IMAGE */
+.gallery-item img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+transition:0.4s;
+}
+
+/* HOVER */
+.gallery-item:hover{
+transform:translateY(-6px);
+box-shadow:0 0 20px rgba(255,215,0,0.6);
+}
+
+.gallery-item:hover img{
+transform:scale(1.1);
+}
+
+.gallery-item video{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+
+/* HOVER EFFECT */
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+.gallery{
+grid-template-columns:repeat(2,minmax(140px, 1fr));
+gap:12px;
+}
+
+.main h1{
+font-size:36px;
+}
+
+}
+
+@media(max-width:560px){
+.gallery{grid-template-columns:1fr;}
+}
+
+</style>
+<link rel="stylesheet" href="assets/css/overhaul.css">
+</head>
+
+<body class="bg-black text-white antialiased selection:bg-red-600/40 has-page-nav">
+<header class="page-top-nav">
+<div class="page-top-nav-inner">
+<a class="page-brand" href="index.html"><img src="assets/images/logos/rmbf.png" alt="Raigad Mix Boxing Association" loading="eager" fetchpriority="high"><span>Raigad Mix Boxing Association</span></a>
+<button class="page-nav-toggle" type="button" aria-expanded="false" aria-controls="pageNavLinks">Menu</button>
+<nav id="pageNavLinks" class="page-nav-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about-us.html">About us</a><a href="organiser.html">Organisation</a><a href="founder.html">Founder</a><a href="gallery.html">Gallery</a><a href="multimedia.html">Multimedia</a><a href="calendar.html">Calendar</a><a href="contact-us.html">Contact Us</a><a href="general-committee.html">General Committee</a></nav>
+</div>
+</header>
+
+
+<div class="overlay"></div>
+
+<!-- HERO -->
+<div class="media-hero">
+<span class="media-kicker"><img src="assets/images/logos/rmbf.png" loading="lazy" alt="RMBA">Media Archive</span>
+<p class="media-subtitle">Training clips, championship highlights, and event moments from across RMBA seasons.</p>
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="main max-w-6xl mx-auto px-4 sm:px-6">
+
+<h1>Multimedia</h1>
+<div class="line rounded-full"></div>
+
+<div class="gallery">
+<div class="gallery-item shadow-xl shadow-black/40"><video src="assets/videos/V1 4.mp4" controls></video></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P2 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P3 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P4 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P5 4.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P6 4.jpeg" loading="lazy"></div>
+
+</div>
+
+</div>
+
+<script defer src="assets/js/site-enhancements.js"></script>
+</body>
+</html>

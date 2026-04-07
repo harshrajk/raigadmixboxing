@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Check RMBA calendar and manage important training schedules, events, and championship dates for 2026 and beyond.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://raigadmixboxing.org/calendar.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pro Calendar">
+<meta property="og:description" content="Check RMBA calendar and manage important training schedules, events, and championship dates for 2026 and beyond.">
+<meta property="og:url" content="https://raigadmixboxing.org/calendar.html">
+<meta property="og:site_name" content="Raigad Mix Boxing Association">
+<meta property="og:image" content="https://raigadmixboxing.org/assets/images/logos/rmbf.png">
+<meta property="og:image:alt" content="Raigad Mix Boxing Association logo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pro Calendar">
+<meta name="twitter:description" content="Check RMBA calendar and manage important training schedules, events, and championship dates for 2026 and beyond.">
+<meta name="twitter:image" content="https://raigadmixboxing.org/assets/images/logos/rmbf.png">
+<meta name="twitter:site" content="@raigadmixboxing">
+<meta name="theme-color" content="#0b0f17">
+<link rel="icon" type="image/png" href="assets/images/logos/rmbf.png">
+
+
+
+
+<script defer src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config = { theme: { extend: { colors: { brandRed: "#dc2626" } } } };</script>
+<title>Pro Calendar</title>
+
+<style>
+body{margin:0;font-family:Arial;background:radial-gradient(960px 380px at 90% 0%, rgba(220,38,38,0.22), transparent 72%), #000;color:white;text-align:center;}
+
+.header{display:flex;align-items:center;gap:12px;padding:14px 15px;justify-content:center;}
+.header img{width:60px;height:60px;border-radius:50%;}
+.title{font-size:18px;font-weight:bold;}
+
+h1{color:#fff4cf;margin:6px 0 0;font-size:52px;letter-spacing:2px;}
+
+.subtitle{margin:8px 0 10px;color:#cbd5e1;font-size:15px;}
+
+.calendar{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;padding:18px;max-width:1260px;margin:0 auto 24px;}
+.month{background:linear-gradient(180deg, rgba(17,20,28,0.92), rgba(10,13,20,0.88));padding:14px;border-radius:14px;border:1px solid rgba(255,255,255,0.14);box-shadow:0 10px 20px rgba(0,0,0,0.32);}
+.month h2{color:#ffd98e;letter-spacing:.04em;font-size:20px;margin:4px 0 10px;}
+
+table{width:100%;border-collapse:collapse;}
+th,td{padding:6px;border:1px solid rgba(255,255,255,0.12);}
+th{color:#fda4af;font-size:12px;letter-spacing:.05em;text-transform:uppercase;}
+
+td{cursor:pointer;height:70px;background:rgba(17,20,30,0.9);font-size:13px;vertical-align:top;}
+td:hover{background:rgba(40,48,67,0.84);}
+
+/* TODAY HIGHLIGHT */
+.today{
+background:red !important;
+color:white;
+font-weight:bold;
+box-shadow:0 0 15px red;
+}
+
+.event-text{font-size:10px;color:#86efac;display:block;line-height:1.35;}
+
+.popup{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:linear-gradient(180deg, rgba(20,25,36,0.95), rgba(10,13,20,0.95));padding:20px;border-radius:14px;border:1px solid rgba(255,255,255,0.2);display:none;z-index:1000;min-width:280px;max-width:90vw;}
+.overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:none;z-index:999;}
+
+.popup h3{margin:0 0 10px;color:#ffe09a;letter-spacing:.03em;}
+
+.popup input{width:100%;box-sizing:border-box;padding:11px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.2);background:rgba(7,11,18,0.84);color:#fff;}
+
+.popup input:focus{outline:none;border-color:rgba(220,38,38,0.72);box-shadow:0 0 0 3px rgba(220,38,38,0.24);}
+
+.popup-actions{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:8px;}
+
+#eventList{max-height:120px;overflow:auto;text-align:left;padding-right:4px;}
+#eventList div{font-size:13px;padding:6px 0;border-bottom:1px dashed rgba(255,255,255,0.14);}
+#eventList button{padding:4px 8px;font-size:11px;}
+
+.contact-bar{position:fixed;bottom:10px;left:50%;transform:translateX(-50%);width:95%;background:rgba(0,0,0,0.85);padding:12px;display:flex;justify-content:center;gap:15px;border-radius:12px;}
+.contact-bar a{color:#fff;text-decoration:none;font-weight:700;}
+
+@media(max-width:760px){
+	h1{font-size:36px;}
+	.subtitle{font-size:13px;padding:0 12px;}
+	.calendar{padding:12px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+	td{height:56px;}
+}
+
+footer{background:black;padding:15px;border-top:2px solid red;margin-top:50px;}
+</style>
+<link rel="stylesheet" href="assets/css/overhaul.css">
+</head>
+
+<body class="bg-black text-white antialiased selection:bg-red-600/40 has-page-nav">
+<header class="page-top-nav">
+<div class="page-top-nav-inner">
+<a class="page-brand" href="index.html"><img src="assets/images/logos/rmbf.png" alt="Raigad Mix Boxing Association" loading="eager" fetchpriority="high"><span>Raigad Mix Boxing Association</span></a>
+<button class="page-nav-toggle" type="button" aria-expanded="false" aria-controls="pageNavLinks">Menu</button>
+<nav id="pageNavLinks" class="page-nav-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about-us.html">About us</a><a href="organiser.html">Organisation</a><a href="founder.html">Founder</a><a href="gallery.html">Gallery</a><a href="multimedia.html">Multimedia</a><a href="calendar.html">Calendar</a><a href="contact-us.html">Contact Us</a><a href="general-committee.html">General Committee</a></nav>
+</div>
+</header>
+
+
+<div class="header border border-white/10 bg-black/70 backdrop-blur-md rounded-xl px-4 py-3">
+<img src="assets/images/logos/rmbf.png" loading="lazy">
+<div class="title tracking-wide">Raigad Mix Boxing Association</div>
+</div>
+
+<h1>2026 Calendar</h1>
+<p class="subtitle">Click any day to add events and build your championship schedule.</p>
+<div class="calendar" id="calendar"></div>
+
+<div class="overlay" id="overlay"></div>
+
+<div class="popup" id="popup">
+<h3>Manage Events</h3>
+<input type="text" id="eventText" placeholder="Add event"><br><br>
+<div class="popup-actions">
+<button onclick="addEvent()">Add</button>
+<button onclick="deleteEvents()">Delete All</button>
+<button onclick="closePopup()">Close</button>
+</div>
+<div id="eventList"></div>
+</div>
+
+<div class="contact-bar ring-1 ring-white/15 shadow-2xl">
+<a href="mailto:raigadmixboxing@gmail.com">📧 Email Us</a>
+</div>
+
+<footer>© 2026 Raigad Mixboxing Association</footer>
+
+<script>
+const months=["January","February","March","April","May","June","July","August","September","October","November","December"];
+let selectedKey="";
+let events=JSON.parse(localStorage.getItem("events")||"{}");
+
+function generateCalendar(year){
+const container=document.getElementById("calendar");
+container.innerHTML="";
+let today=new Date();
+
+months.forEach((month,index)=>{
+let firstDay=new Date(year,index,1).getDay();
+let days=new Date(year,index+1,0).getDate();
+
+let table=`<div class="month"><h2>${month}</h2><table>`;
+table+=`<tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr><tr>`;
+
+for(let i=0;i<firstDay;i++) table+="<td></td>";
+
+for(let d=1;d<=days;d++){
+let key=`${year}-${index}-${d}`;
+let eventHtml="";
+
+if(events[key]){
+events[key].forEach(ev=>{
+eventHtml+=`<span class='event-text'>• ${ev}</span>`;
+});
+}
+
+let isToday=(d===today.getDate() && index===today.getMonth() && year===today.getFullYear());
+let className=isToday?"today":"";
+
+table+=`<td class="${className}" onclick="openPopup('${key}')">${d}${eventHtml}</td>`;
+
+if((d+firstDay)%7===0) table+="</tr><tr>";
+}
+
+table+="</tr></table></div>";
+container.innerHTML+=table;
+});
+}
+
+function openPopup(key){
+selectedKey=key;
+document.getElementById("popup").style.display="block";
+document.getElementById("overlay").style.display="block";
+
+let list="";
+if(events[key]){
+events[key].forEach((ev,i)=>{
+list+=`<div>${ev} <button onclick="removeOne(${i})">❌</button></div>`;
+});
+}
+
+document.getElementById("eventList").innerHTML=list;
+}
+
+function closePopup(){
+document.getElementById("popup").style.display="none";
+document.getElementById("overlay").style.display="none";
+}
+
+function addEvent(){
+let text=document.getElementById("eventText").value;
+if(text.trim()==="") return;
+
+if(!events[selectedKey]) events[selectedKey]=[];
+events[selectedKey].push(text);
+
+localStorage.setItem("events",JSON.stringify(events));
+
+document.getElementById("eventText").value="";
+openPopup(selectedKey);
+generateCalendar(2026);
+}
+
+function deleteEvents(){
+delete events[selectedKey];
+localStorage.setItem("events",JSON.stringify(events));
+closePopup();
+generateCalendar(2026);
+}
+
+function removeOne(index){
+events[selectedKey].splice(index,1);
+if(events[selectedKey].length===0) delete events[selectedKey];
+localStorage.setItem("events",JSON.stringify(events));
+openPopup(selectedKey);
+generateCalendar(2026);
+}
+
+document.getElementById("overlay").onclick=closePopup;
+
+window.onload=()=>{
+generateCalendar(2026);
+};
+</script>
+
+<script defer src="assets/js/site-enhancements.js"></script>
+</body>
+</html>
