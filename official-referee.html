@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +35,7 @@ body, html {
 margin:0;
 padding:0;
 height:100%;
-font-family:Arial;
+font-family:var(--font-body);
 background:url('assets/images/backgrounds/bg-main.png') no-repeat center center fixed;
 background-size:cover;
 }
@@ -244,14 +244,17 @@ rows[i].style.display=text.includes(input) ? "" : "none";
 
 </script>
 
-<link rel="stylesheet" href="assets/css/overhaul.css">
+<link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body class="bg-black text-white antialiased selection:bg-red-600/40 has-page-nav">
 <header class="page-top-nav">
 <div class="page-top-nav-inner">
 <a class="page-brand" href="index.html"><img src="assets/images/logos/rmbf.png" alt="Raigad Mix Boxing Association" loading="eager" fetchpriority="high"><span>Raigad Mix Boxing Association</span></a>
+<div class="nav-controls">
+<button class="theme-toggle" type="button" aria-label="Switch to light mode"><span class="icon-moon" aria-hidden="true">&#x1F319;</span><span class="icon-sun" aria-hidden="true">&#x2600;&#xFE0F;</span></button>
 <button class="page-nav-toggle" type="button" aria-expanded="false" aria-controls="pageNavLinks">Menu</button>
+</div>
 <nav id="pageNavLinks" class="page-nav-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about-us.html">About us</a><a href="organiser.html">Organisation</a><a href="founder.html">Founder</a><a href="gallery.html">Gallery</a><a href="multimedia.html">Multimedia</a><a href="calendar.html">Calendar</a><a href="contact-us.html">Contact Us</a><a href="general-committee.html">General Committee</a></nav>
 </div>
 </header>

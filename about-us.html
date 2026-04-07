@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="dark">
 <head>
 <title>About Us - Raigad Mix-Boxing Association</title>
 
@@ -29,7 +29,6 @@
 <script defer src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config = { theme: { extend: { colors: { brandRed: "#dc2626" } } } };</script>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
@@ -40,7 +39,7 @@ background-image:url("assets/images/backgrounds/bg-about.png");
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
-font-family:Arial, sans-serif;
+font-family:var(--font-body);
 scroll-behavior:smooth;
 }
 
@@ -90,7 +89,7 @@ font-weight:bold;
 /* ✅ FIXED ABOUT TITLE (VS CODE WARNING SOLVED) */
 .about-title{
 font-size:40px;
-font-family:'Playfair Display',serif;
+font-family:var(--font-display);
 text-align:center;
 margin-top:20px;
 
@@ -219,7 +218,7 @@ gap:10px;
 }
 
 </style>
-<link rel="stylesheet" href="assets/css/overhaul.css">
+<link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body class="bg-black text-white antialiased selection:bg-red-600/40 has-page-nav">
@@ -230,7 +229,10 @@ gap:10px;
 <img src="assets/images/logos/rmbf.png" alt="Raigad Mix Boxing Association" loading="eager" fetchpriority="high">
 <span>Raigad Mix Boxing Association</span>
 </a>
+<div class="nav-controls">
+<button class="theme-toggle" type="button" aria-label="Switch to light mode"><span class="icon-moon" aria-hidden="true">&#x1F319;</span><span class="icon-sun" aria-hidden="true">&#x2600;&#xFE0F;</span></button>
 <button class="page-nav-toggle" type="button" aria-expanded="false" aria-controls="pageNavLinks">Menu</button>
+</div>
 <nav id="pageNavLinks" class="page-nav-links" aria-label="Primary navigation">
 <a href="index.html">Home</a>
 <a href="about-us.html">About us</a>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +41,7 @@ box-sizing:border-box;
 /* BODY */
 body,html{
 height:100%;
-font-family:Arial, sans-serif;
+font-family:var(--font-body);
 background:url("assets/images/backgrounds/bg-main.png");
 background-size:cover;
 background-position:center;
@@ -217,14 +217,17 @@ font-size:20px;
 }
 
 </style>
-<link rel="stylesheet" href="assets/css/overhaul.css">
+<link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body class="bg-black text-white antialiased selection:bg-red-600/40 has-page-nav">
 <header class="page-top-nav">
 <div class="page-top-nav-inner">
 <a class="page-brand" href="index.html"><img src="assets/images/logos/rmbf.png" alt="Raigad Mix Boxing Association" loading="eager" fetchpriority="high"><span>Raigad Mix Boxing Association</span></a>
+<div class="nav-controls">
+<button class="theme-toggle" type="button" aria-label="Switch to light mode"><span class="icon-moon" aria-hidden="true">&#x1F319;</span><span class="icon-sun" aria-hidden="true">&#x2600;&#xFE0F;</span></button>
 <button class="page-nav-toggle" type="button" aria-expanded="false" aria-controls="pageNavLinks">Menu</button>
+</div>
 <nav id="pageNavLinks" class="page-nav-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about-us.html">About us</a><a href="organiser.html">Organisation</a><a href="founder.html">Founder</a><a href="gallery.html">Gallery</a><a href="multimedia.html">Multimedia</a><a href="calendar.html">Calendar</a><a href="contact-us.html">Contact Us</a><a href="general-committee.html">General Committee</a></nav>
 </div>
 </header>
@@ -255,7 +258,9 @@ font-size:20px;
 
 </div>
 
-<form action="mailto:raigadmixboxing@gmail.com" method="post" enctype="text/plain" class="mt-4">
+<form data-formspree="https://formspree.io/f/xkgjpqno" action="https://formspree.io/f/xkgjpqno" method="POST" class="mt-4" novalidate>
+<input type="hidden" name="_subject" value="New contact from raigadmixboxing.org">
+<div aria-live="polite" id="form-status" class="sr-only"></div>
 <div class="contact-form-grid">
 <div>
 <label for="name" class="mb-2 block text-sm font-semibold text-slate-200">Full Name</label>
@@ -299,5 +304,6 @@ allowfullscreen>
 <a href="https://wa.me/8796231590" class="whatsapp">💬</a>
 
 <script defer src="assets/js/site-enhancements.js"></script>
+<script defer src="assets/js/contact-form.js"></script>
 </body>
 </html>

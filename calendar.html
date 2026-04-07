@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +29,7 @@
 <title>Pro Calendar</title>
 
 <style>
-body{margin:0;font-family:Arial;background:radial-gradient(960px 380px at 90% 0%, rgba(220,38,38,0.22), transparent 72%), #000;color:white;text-align:center;}
+body{margin:0;font-family:var(--font-body);background:radial-gradient(960px 380px at 90% 0%, rgba(220,38,38,0.22), transparent 72%), #000;color:white;text-align:center;}
 
 .header{display:flex;align-items:center;gap:12px;padding:14px 15px;justify-content:center;}
 .header img{width:60px;height:60px;border-radius:50%;}
@@ -87,14 +87,17 @@ box-shadow:0 0 15px red;
 
 footer{background:black;padding:15px;border-top:2px solid red;margin-top:50px;}
 </style>
-<link rel="stylesheet" href="assets/css/overhaul.css">
+<link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body class="bg-black text-white antialiased selection:bg-red-600/40 has-page-nav">
 <header class="page-top-nav">
 <div class="page-top-nav-inner">
 <a class="page-brand" href="index.html"><img src="assets/images/logos/rmbf.png" alt="Raigad Mix Boxing Association" loading="eager" fetchpriority="high"><span>Raigad Mix Boxing Association</span></a>
+<div class="nav-controls">
+<button class="theme-toggle" type="button" aria-label="Switch to light mode"><span class="icon-moon" aria-hidden="true">&#x1F319;</span><span class="icon-sun" aria-hidden="true">&#x2600;&#xFE0F;</span></button>
 <button class="page-nav-toggle" type="button" aria-expanded="false" aria-controls="pageNavLinks">Menu</button>
+</div>
 <nav id="pageNavLinks" class="page-nav-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about-us.html">About us</a><a href="organiser.html">Organisation</a><a href="founder.html">Founder</a><a href="gallery.html">Gallery</a><a href="multimedia.html">Multimedia</a><a href="calendar.html">Calendar</a><a href="contact-us.html">Contact Us</a><a href="general-committee.html">General Committee</a></nav>
 </div>
 </header>
@@ -108,6 +111,10 @@ footer{background:black;padding:15px;border-top:2px solid red;margin-top:50px;}
 <h1>2026 Calendar</h1>
 <p class="subtitle">Click any day to add events and build your championship schedule.</p>
 <div class="calendar" id="calendar"></div>
+
+<div style="text-align:center;">
+<button class="ics-export-btn" id="icsExportBtn">&#x1F4C5; Export to .ics</button>
+</div>
 
 <div class="overlay" id="overlay"></div>
 
@@ -172,8 +179,10 @@ container.innerHTML+=table;
 
 function openPopup(key){
 selectedKey=key;
-document.getElementById("popup").style.display="block";
+var popup=document.getElementById("popup");
+popup.style.display="block";
 document.getElementById("overlay").style.display="block";
+requestAnimationFrame(function(){ popup.classList.add("popup-open"); });
 
 let list="";
 if(events[key]){
@@ -186,7 +195,9 @@ document.getElementById("eventList").innerHTML=list;
 }
 
 function closePopup(){
-document.getElementById("popup").style.display="none";
+var popup=document.getElementById("popup");
+popup.classList.remove("popup-open");
+setTimeout(function(){ popup.style.display="none"; }, 220);
 document.getElementById("overlay").style.display="none";
 }
 
@@ -226,6 +237,40 @@ generateCalendar(2026);
 };
 </script>
 
+
+<script>
+document.getElementById("icsExportBtn").addEventListener("click", function() {
+  var events = JSON.parse(localStorage.getItem("events") || "{}");
+  var lines = [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//Raigad Mix Boxing//Calendar//EN",
+    "CALSCALE:GREGORIAN",
+    "METHOD:PUBLISH"
+  ];
+  Object.keys(events).forEach(function(key) {
+    var parts = key.split("-");
+    var year = parts[0];
+    var month = String(parseInt(parts[1]) + 1).padStart(2, "0");
+    var day = String(parts[2]).padStart(2, "0");
+    var dateStr = year + month + day;
+    (events[key] || []).forEach(function(ev) {
+      lines.push("BEGIN:VEVENT");
+      lines.push("DTSTART;VALUE=DATE:" + dateStr);
+      lines.push("DTEND;VALUE=DATE:" + dateStr);
+      lines.push("SUMMARY:" + ev.replace(/,/g, "\,"));
+      lines.push("END:VEVENT");
+    });
+  });
+  lines.push("END:VCALENDAR");
+  var blob = new Blob([lines.join("\r\n")], { type: "text/calendar" });
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "rmba-calendar.ics";
+  a.click();
+  URL.revokeObjectURL(a.href);
+});
+</script>
 <script defer src="assets/js/site-enhancements.js"></script>
 </body>
 </html>
