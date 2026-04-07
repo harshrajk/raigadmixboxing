@@ -498,3 +498,141 @@ img {
     scroll-behavior: auto !important;
   }
 }
+
+/* === Nextgen 2026 experience layer === */
+:root {
+  --neo-cyan: #22d3ee;
+  --neo-violet: #a855f7;
+  --neo-lime: #84cc16;
+  --neo-surface: color-mix(in srgb, var(--ui-panel) 78%, #06080f);
+}
+
+body.ui-page {
+  background:
+    radial-gradient(1100px 450px at 50% -10%, rgba(168, 85, 247, 0.15), transparent 65%),
+    radial-gradient(900px 400px at 90% 0%, rgba(34, 211, 238, 0.11), transparent 66%),
+    linear-gradient(130deg, #05070c 0%, #080b14 38%, #080a12 100%);
+}
+
+body.ui-page::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at center, black 28%, transparent 80%);
+  z-index: 0;
+}
+
+.ui-shell {
+  width: min(1240px, calc(100% - 28px));
+  margin-inline: auto;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  padding: clamp(14px, 2.2vw, 26px);
+  background: linear-gradient(145deg, rgba(11, 16, 26, 0.56), rgba(9, 13, 22, 0.28));
+  backdrop-filter: blur(8px);
+}
+
+.page-top-nav,
+header {
+  backdrop-filter: blur(18px) saturate(130%);
+  border-bottom-color: rgba(34, 211, 238, 0.15) !important;
+}
+
+.page-nav-links a,
+nav a {
+  border: 1px solid transparent;
+}
+
+.page-nav-links a:hover,
+nav a:hover {
+  background: rgba(34, 211, 238, 0.12) !important;
+  border-color: rgba(34, 211, 238, 0.45) !important;
+  color: #fff !important;
+}
+
+.hero-box {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid rgba(168, 85, 247, 0.25) !important;
+}
+
+.hero-box::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(120deg, rgba(168, 85, 247, 0.3), rgba(34, 211, 238, 0.24), rgba(220, 38, 38, 0.28));
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.neo-command-dock {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.neo-command-btn {
+  border: 1px solid rgba(34, 211, 238, 0.5);
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.25), rgba(168, 85, 247, 0.32));
+  box-shadow: 0 8px 25px rgba(34, 211, 238, 0.2);
+}
+
+.neo-chip {
+  border-radius: 999px;
+  border: 1px solid rgba(132, 204, 22, 0.4);
+  padding: 6px 10px;
+  font-size: 11px;
+  color: #d9f99d;
+  background: rgba(132, 204, 22, 0.12);
+}
+
+@media (max-width: 760px) {
+  .neo-command-dock {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .neo-command-btn {
+    padding: 9px 12px;
+    font-size: 11px;
+  }
+}
+
+.neo-command-modal {
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+.neo-command-modal::backdrop {
+  background: rgba(1, 4, 9, 0.72);
+  backdrop-filter: blur(5px);
+}
+
+.neo-modal-card {
+  min-width: min(540px, calc(100vw - 24px));
+  border: 1px solid rgba(34, 211, 238, 0.38);
+  border-radius: 18px;
+  background: linear-gradient(160deg, rgba(7, 12, 20, 0.98), rgba(10, 16, 28, 0.94));
+  color: #f8fafc;
+}
+
+.neo-actions {
+  display: grid;
+  gap: 8px;
+}
