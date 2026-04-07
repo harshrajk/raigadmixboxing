@@ -9,7 +9,6 @@
     '.bio-section img'
   ].join(', ');
 
-  /* ── Theme Toggle ───────────────────────────────────────── */
   /* ── Scroll-shrink Navbar ───────────────────────────────── */
   function initScrollNavShrink() {
     var nav = document.querySelector('.page-top-nav');
