@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="dark">
 <head>
 <title>Founder - Raigad Mix-Boxing Association</title>
 
@@ -40,9 +40,9 @@ box-sizing:border-box;
 
 /* BODY */
 body{
-font-family:Arial, sans-serif;
+font-family:var(--font-body);
 background:
-radial-gradient(950px 420px at 18% 0%, rgba(255,0,0,0.22), transparent 70%),
+radial-gradient(950px 420px at 18% 0%, rgba(185,28,28,0.10), transparent 70%),
 linear-gradient(135deg,#000000,#0b0b0b,#140000);
 color:white;
 }
@@ -79,7 +79,7 @@ font-weight:bold;
 .about-title{
 color:#FFD700;
 font-size:52px;
-font-family:Georgia;
+font-family:var(--font-body);
 text-align:center;
 letter-spacing:2px;
 margin-top:14px;
@@ -148,7 +148,7 @@ box-shadow:0 0 25px rgba(255,0,0,0.15);
 }
 
 .bio-section p{
-font-family:Georgia;
+font-family:var(--font-body);
 line-height:1.7;
 font-size:16px;
 color:#f0e3b0;
@@ -328,7 +328,7 @@ font-size:22px;
 }
 
 </style>
-<link rel="stylesheet" href="assets/css/overhaul.css">
+<link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body class="bg-black text-white antialiased selection:bg-red-600/40 has-page-nav">
@@ -449,27 +449,6 @@ Mix Boxing expanding across India and internationally.
 </div>
 
 </div>
-
-<script>
-const counters=document.querySelectorAll('.achievement-number');
-
-counters.forEach(counter=>{
-const update=()=>{
-const target=+counter.getAttribute('data-target');
-const count=+counter.innerText;
-
-const increment=target/200;
-
-if(count<target){
-counter.innerText=Math.ceil(count+increment);
-setTimeout(update,10);
-}else{
-counter.innerText=target;
-}
-}
-update();
-});
-</script>
 
 <script defer src="assets/js/site-enhancements.js"></script>
 </body>

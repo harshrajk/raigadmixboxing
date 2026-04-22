@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
 <meta charset="UTF-8">
@@ -22,336 +22,11 @@
 <meta name="theme-color" content="#0b0f17">
 <link rel="icon" type="image/png" href="assets/images/logos/rmbf.png">
 
-
-
-
-
 <script defer src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config = { theme: { extend: { colors: { brandRed: "#dc2626" } } } };</script>
+<script>tailwind.config = { theme: { extend: { colors: { brandRed: "#b91c1c" } } } };</script>
 <title>Raigad Mixboxing Association</title>
 
-<style>
-html{scroll-behavior:smooth;}
-
-body{
-margin:0;
-font-family:Arial, sans-serif;
-background:#000;
-color:white;
-overflow-x:hidden;
-padding-top:0;
-}
-
-/* PRELOADER */
-#preloader{position:fixed;width:100%;height:100%;background:black;display:flex;justify-content:center;align-items:center;z-index:2000;}
-.loader{width:60px;height:60px;border:6px solid #222;border-top:6px solid red;border-radius:50%;animation:spin 1s linear infinite;}
-@keyframes spin{100%{transform:rotate(360deg);}}
-
-/* HEADER */
-header{display:flex;justify-content:space-between;align-items:center;padding:10px 20px;background:black;position:fixed;width:100%;top:0;z-index:1000;border-bottom:2px solid red;box-sizing:border-box;}
-
-.logo-area{display:flex;align-items:center;}
-.logo-area img{height:55px;margin-right:10px;}
-.site-title{font-size:18px;font-weight:bold;}
-
-nav{display:flex;}
-nav a{text-decoration:none;color:white;margin:0 10px;font-size:14px;font-weight:bold;transition:0.3s;}
-nav a:hover{color:red;}
-
-.menu-toggle{display:none;font-size:28px;cursor:pointer;color:white;}
-
-@media(max-width:900px){
-.menu-toggle{display:block;}
-nav{position:absolute;top:70px;left:0;width:100%;background:black;flex-direction:column;display:none;border-top:2px solid red;}
-nav a{padding:15px;border-bottom:1px solid #222;text-align:center;margin:0;}
-nav.active{display:flex;}
-}
-
-/* HERO */
-.hero{
-min-height:calc(100vh - 82px);
-height:auto;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-position:relative;
-overflow:hidden;
-}
-
-/* VIDEO BACKGROUND */
-.bg-video{
-position:absolute;
-top:0;left:0;
-width:100%;height:100%;
-object-fit:cover;
-opacity:0.25;
-z-index:0;
-}
-
-.hero::before{
-content:"";
-position:absolute;
-width:200%;
-height:200%;
-background:radial-gradient(circle,rgba(255,0,0,0.15) 0%,transparent 60%);
-animation:smoke 8s linear infinite;
-}
-@keyframes smoke{100%{transform:rotate(360deg);}}
-
-.hero::after{
-content:"";
-position:absolute;
-right:14%;
-top:46%;
-width:70px;
-height:70px;
-border-radius:50%;
-border:2px solid rgba(255,0,0,0.45);
-box-shadow:0 0 20px rgba(255,0,0,0.25);
-animation:impactPulse 3.6s ease-out infinite;
-z-index:5;
-}
-@keyframes impactPulse{
-0%,18%{transform:scale(0.4);opacity:0.2;}
-23%{transform:scale(1);opacity:0.8;}
-38%{transform:scale(1.35);opacity:0.06;}
-52%{transform:scale(0.6);opacity:0.25;}
-58%{transform:scale(1.08);opacity:0.7;}
-74%,100%{transform:scale(1.45);opacity:0;}
-}
-
-.glove-stage{
-position:absolute;
-right:clamp(8px, 4vw, 56px);
-top:52%;
-transform:translateY(-50%);
-width:220px;
-height:190px;
-z-index:20;
-pointer-events:none;
-}
-
-.punch-glove{
-position:absolute;
-inset:0;
-width:190px;
-height:auto;
-filter:drop-shadow(0 8px 18px rgba(255,0,0,0.35));
-animation:comboPunch 3.6s cubic-bezier(.26,.7,.2,1) infinite;
-}
-
-.glove-trail,
-.impact-spark{
-position:absolute;
-border-radius:999px;
-opacity:0;
-}
-
-.glove-trail{
-right:34px;
-top:64px;
-height:12px;
-background:linear-gradient(90deg, rgba(255,40,40,0), rgba(255,90,90,0.65), rgba(255,220,220,0.92));
-filter:blur(1px);
-transform-origin:right center;
-}
-
-.trail-one{
-width:115px;
-animation:trailFlash 3.6s ease-in-out infinite;
-}
-
-.trail-two{
-width:85px;
-top:90px;
-animation:trailFlash 3.6s ease-in-out 0.24s infinite;
-}
-
-.impact-spark{
-right:172px;
-top:72px;
-width:8px;
-height:54px;
-background:linear-gradient(180deg, rgba(255,242,170,0.95), rgba(239,68,68,0));
-transform:rotate(25deg) scale(0.2);
-animation:sparkBurst 3.6s ease-out infinite;
-}
-
-.impact-spark.spark-two{
-height:36px;
-right:170px;
-top:83px;
-transform:rotate(-25deg) scale(0.2);
-animation-delay:0.08s;
-}
-
-@keyframes comboPunch{
-0%,12%{transform:translate(0,0) rotate(0deg) scale(1);}
-22%{transform:translate(-66px,-8px) rotate(-12deg) scale(1.02);}
-31%{transform:translate(-76px,-5px) rotate(2deg) scale(1.05);}
-40%{transform:translate(-42px,0) rotate(-4deg) scale(1);}
-53%{transform:translate(-80px,6px) rotate(-7deg) scale(1.03);}
-62%{transform:translate(-92px,2px) rotate(5deg) scale(1.06);}
-74%,100%{transform:translate(0,0) rotate(0deg) scale(1);}
-}
-
-@keyframes trailFlash{
-0%,18%,45%,100%{opacity:0;transform:scaleX(0.4);}
-24%,58%{opacity:0.9;transform:scaleX(1);}
-34%,68%{opacity:0;transform:scaleX(1.2);}
-}
-
-@keyframes sparkBurst{
-0%,22%,54%,100%{opacity:0;}
-24%,56%{opacity:1;transform:rotate(25deg) scale(1);}
-34%,66%{opacity:0;transform:rotate(34deg) scale(1.4);}
-}
-
-.hero-box{
-background:rgba(0,0,0,0.7);
-padding:50px 30px;
-border-radius:12px;
-z-index:10;
-animation:fadeInUp 1.2s ease, heroBeat 3.6s ease-in-out infinite;
-max-width:90%;
-}
-
-@keyframes heroBeat{
-0%,20%,47%,100%{transform:translateX(0);}
-26%{transform:translateX(-4px);}
-30%{transform:translateX(0);}
-58%{transform:translateX(-6px);}
-62%{transform:translateX(0);}
-}
-
-.hero h1{font-size:42px;letter-spacing:2px;}
-
-.tagline{font-size:18px;margin-top:10px;color:#ccc;}
-
-.hero-buttons{
-margin-top:25px;
-display:flex;
-gap:15px;
-justify-content:center;
-flex-wrap:wrap;
-}
-
-button{padding:12px 25px;background:red;color:white;border:none;border-radius:6px;font-size:16px;cursor:pointer;transition:0.3s;}
-button:hover{background:#ff3333;box-shadow:0 0 10px red;}
-
-/* BUTTON LINK STYLE */
-.btn{
-padding:12px 25px;
-background:red;
-color:white;
-border-radius:6px;
-text-decoration:none;
-font-size:16px;
-display:inline-block;
-transition:0.3s;
-}
-
-.btn:hover{
-background:#ff3333;
-box-shadow:0 0 10px red;
-}
-
-.outline-btn{background:transparent;border:2px solid red;}
-.outline-btn:hover{background:red;}
-
-.stats{
-display:flex;
-gap:30px;
-justify-content:center;
-margin-top:30px;
-flex-wrap:wrap;
-}
-
-.stats h2{color:red;margin:0;font-size:28px;}
-.stats p{margin:0;font-size:14px;color:#aaa;}
-
-@keyframes fadeInUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
-
-/* SLIDER */
-.slider{overflow:hidden;background:#111;padding:20px 0;}
-.slider-track{display:flex;gap:20px;animation:scroll 25s linear infinite;}
-.slider-track img{width:220px;height:138px;object-fit:cover;border:2px solid rgba(255,0,0,0.75);border-radius:10px;box-shadow:0 10px 20px rgba(0,0,0,0.45);}
-@keyframes scroll{100%{transform:translateX(-50%);}}
-
-/* INFO */
-.info{padding:60px 20px;text-align:center;background:#111;}
-.red-line{height:2px;background:red;width:200px;margin:20px auto;}
-
-/* CHAMPIONS */
-.champions{background:#000;padding:60px 20px;text-align:center;}
-.champion-grid{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;}
-.champion-card{background:#0f172a;border:1px solid rgba(255,255,255,0.12);padding:0;width:320px;border-radius:14px;transition:0.4s;overflow:hidden;}
-.champion-card img{width:100%;height:430px;object-fit:cover;display:block;transition:transform 0.45s ease,filter 0.45s ease;filter:saturate(1.06) contrast(1.06);}
-.champion-card h3{font-size:35px;padding:14px 10px 2px 10px;margin:0;line-height:1.1;}
-.champion-card p{font-size:27px;padding:2px 10px 16px 10px;margin:0;color:#ff5b5b;line-height:1.1;}
-.champion-card:hover{border:1px solid red;box-shadow:0 0 25px rgba(255,0,0,0.45);transform:translateY(-8px);}
-.champion-card:hover img{transform:scale(1.04);filter:saturate(1.12) contrast(1.08);}
-
-/* EVENT */
-.event-banner{background:linear-gradient(90deg,#000,#111,#000);padding:50px 20px;text-align:center;border-top:2px solid red;border-bottom:2px solid red;}
-.event-banner p{margin:10px 0 24px;color:#d7dee9;}
-
-.event-register{
-display:inline-flex;
-align-items:center;
-gap:10px;
-padding:13px 24px;
-border-radius:999px;
-text-decoration:none;
-text-transform:uppercase;
-font-weight:800;
-letter-spacing:0.05em;
-color:#fff;
-background:linear-gradient(135deg,#f97316,#dc2626 54%,#991b1b);
-border:1px solid rgba(255,255,255,0.26);
-box-shadow:0 14px 28px rgba(220,38,38,0.32);
-transition:transform .25s ease,box-shadow .25s ease,filter .25s ease;
-}
-
-.event-register .arrow{
-font-size:18px;
-line-height:1;
-transition:transform .25s ease;
-}
-
-.event-register:hover{
-transform:translateY(-2px);
-box-shadow:0 18px 34px rgba(220,38,38,0.42);
-filter:saturate(1.08);
-}
-
-.event-register:hover .arrow{
-transform:translateX(3px);
-}
-
-footer{background:black;padding:20px;text-align:center;border-top:2px solid red;}
-
-/* MOBILE */
-@media(max-width:600px){
-.hero h1{font-size:28px;}
-.tagline{font-size:14px;}
-.stats{gap:15px;}
-.hero::after{display:none;}
-.glove-stage{right:8px;top:58%;width:155px;height:140px;}
-.punch-glove{width:145px;}
-.glove-trail{right:24px;top:48px;}
-.trail-one{width:78px;}
-.trail-two{width:58px;top:64px;}
-.impact-spark{right:124px;top:57px;height:36px;}
-.champion-card{width:92vw;max-width:360px;}
-.champion-card img{height:380px;}
-.champion-card h3{font-size:30px;}
-.champion-card p{font-size:23px;}
-}
-
-</style>
-<link rel="stylesheet" href="assets/css/overhaul.css">
+<link rel="stylesheet" href="assets/css/main.css">
 
 <script type="application/ld+json">
 {
@@ -369,40 +44,26 @@ footer{background:black;padding:20px;text-align:center;border-top:2px solid red;
 </script>
 </head>
 
-<body class="bg-black text-white antialiased selection:bg-red-600/40">
+<body class="bg-black text-white antialiased selection:bg-red-600/40 has-page-nav">
 
 <div id="preloader"><div class="loader"></div></div>
 
-<header>
-<div class="logo-area">
-<img src="assets/images/logos/rmbf.png" loading="lazy">
-<div class="site-title">Raigad Mix Boxing Association</div>
+<header class="page-top-nav">
+<div class="page-top-nav-inner">
+<a class="page-brand" href="index.html"><img src="assets/images/logos/rmbf.png" alt="Raigad Mix Boxing Association" loading="eager" fetchpriority="high"><span>Raigad Mix Boxing Association</span></a>
+<button class="page-nav-toggle" type="button" aria-expanded="false" aria-controls="pageNavLinks">Menu</button>
+<nav id="pageNavLinks" class="page-nav-links" aria-label="Primary navigation"><a href="index.html">Home</a><a href="about-us.html">About us</a><a href="organiser.html">Organisation</a><a href="founder.html">Founder</a><a href="gallery.html">Gallery</a><a href="multimedia.html">Multimedia</a><a href="calendar.html">Calendar</a><a href="contact-us.html">Contact Us</a><a href="general-committee.html">General Committee</a></nav>
 </div>
-
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-<nav id="navMenu">
-<a  href="index.html">Home</a>
-<a  href="about-us.html">About us</a>
-<a  href="organiser.html">Organisation</a>
-<a  href="founder.html">Founder</a>
-<a  href="gallery.html">Gallery</a>
-<a  href="multimedia.html">Multimedia</a>
-<a  href="calendar.html">Calendar</a>
-<a  href="contact-us.html">Contact Us</a>
-<a  href="general-committee.html">General Committee</a>
-</nav>
 </header>
 
-<!-- HERO UPDATED -->
 <div class="hero">
 
-<video autoplay muted loop class="bg-video">
+<video autoplay muted loop playsinline class="bg-video" preload="metadata" aria-label="Background training footage">
 <source src="assets/videos/training-video.mp4" type="video/mp4">
 </video>
 
 <div class="glove-stage" aria-hidden="true">
-<img src="assets/images/icons/glove.png" class="punch-glove" loading="eager" fetchpriority="high">
+<img src="assets/images/icons/glove.png" class="punch-glove" loading="eager" fetchpriority="high" alt="">
 <span class="glove-trail trail-one"></span>
 <span class="glove-trail trail-two"></span>
 <span class="impact-spark"></span>
@@ -410,78 +71,97 @@ footer{background:black;padding:20px;text-align:center;border-top:2px solid red;
 </div>
 
 <div class="hero-box">
-<h1>RAIGAD MIX BOXING</h1>
-<p class="tagline">Train Hard • Fight Strong • Become Champion</p>
+<h1><span class="hero-title-word">RAIGAD</span> <span class="hero-title-word">MIX</span> <span class="hero-title-word">BOXING</span></h1>
+<p class="tagline">Train Hard &bull; Fight Strong &bull; Become Champion</p>
 
 <div class="hero-buttons">
-<a class="btn"  href="contact-us.html">Join Us</a>
-<a class="btn"  href="about-us.html">Learn More</a>
+<a class="btn" href="contact-us.html">Join Us</a>
+<a class="btn outline-btn" href="about-us.html">Learn More</a>
 </div>
 
 <div class="stats">
-<div><h2>6+</h2><p>Events</p></div>
-<div><h2>8+</h2><p>Years Experience</p></div>
-</div>
-
+<div><h2 data-count="6" data-suffix="+">6+</h2><p>Events</p></div>
+<div><h2 data-count="8" data-suffix="+">8+</h2><p>Years Experience</p></div>
 </div>
 </div>
 
-<!-- SLIDER -->
+</div>
+
 <section class="slider">
 <div class="slider-track">
-<img src="assets/images/gallery/p1 2.jpeg" loading="lazy"><img src="assets/images/gallery/p2 2.jpeg" loading="lazy"><img src="assets/images/gallery/p3 2.jpeg" loading="lazy"><img src="assets/images/gallery/p4 2.jpeg" loading="lazy"><img src="assets/images/gallery/p5 2.jpeg" loading="lazy"><img src="assets/images/gallery/p6 2.jpeg" loading="lazy"><img src="assets/images/gallery/p7 2.jpeg" loading="lazy">
-<img src="assets/images/gallery/p1 2.jpeg" loading="lazy"><img src="assets/images/gallery/p2 2.jpeg" loading="lazy"><img src="assets/images/gallery/p3 2.jpeg" loading="lazy"><img src="assets/images/gallery/p4 2.jpeg" loading="lazy"><img src="assets/images/gallery/p5 2.jpeg" loading="lazy"><img src="assets/images/gallery/p6 2.jpeg" loading="lazy"><img src="assets/images/gallery/p7 2.jpeg" loading="lazy">
+<img src="assets/images/gallery/p1 2.jpeg" loading="lazy" alt="Championship event"><img src="assets/images/gallery/p2 2.jpeg" loading="lazy" alt="Championship event"><img src="assets/images/gallery/p3 2.jpeg" loading="lazy" alt="Championship event"><img src="assets/images/gallery/p4 2.jpeg" loading="lazy" alt="Championship event"><img src="assets/images/gallery/p5 2.jpeg" loading="lazy" alt="Championship event"><img src="assets/images/gallery/p6 2.jpeg" loading="lazy" alt="Championship event"><img src="assets/images/gallery/p7 2.jpeg" loading="lazy" alt="Championship event">
+<img src="assets/images/gallery/p1 2.jpeg" loading="lazy" alt="Championship event"><img src="assets/images/gallery/p2 2.jpeg" loading="lazy" alt="Championship event"><img src="assets/images/gallery/p3 2.jpeg" loading="lazy" alt="Championship event"><img src="assets/images/gallery/p4 2.jpeg" loading="lazy" alt="Championship event"><img src="assets/images/gallery/p5 2.jpeg" loading="lazy" alt="Championship event"><img src="assets/images/gallery/p6 2.jpeg" loading="lazy" alt="Championship event"><img src="assets/images/gallery/p7 2.jpeg" loading="lazy" alt="Championship event">
 </div>
 </section>
 
-<!-- INFO -->
 <section class="info">
 <h2>Welcome to Raigad Mixboxing Association</h2>
 <div class="red-line"></div>
 <p>Raigad Mixboxing Association promotes mixboxing sport, develops young fighters and organizes championships across the region.</p>
 </section>
 
-<!-- CHAMPIONS -->
 <section class="champions">
 <h2>Our Champions</h2>
 <div class="champion-grid">
 <div class="champion-card">
-<img src="assets/images/team/Smit Sanjay Sakpal.jpg" loading="lazy"><h3>Smit Sanjay Sakpal</h3><p>World And Asian Champion</p>
+<img src="assets/images/team/Smit Sanjay Sakpal.jpg" loading="lazy" alt="Smit Sanjay Sakpal"><h3>Smit Sanjay Sakpal</h3><p>World And Asian Champion</p>
 </div>
 <div class="champion-card">
-<img src="assets/images/team/Sanskar Yogesh Wargude.jpg" loading="lazy"><h3>Sanskar Yogesh Wargude</h3><p>National And Asian Champion</p>
+<img src="assets/images/team/Sanskar Yogesh Wargude.jpg" loading="lazy" alt="Sanskar Yogesh Wargude"><h3>Sanskar Yogesh Wargude</h3><p>National And Asian Champion</p>
 </div>
 <div class="champion-card">
-<img src="assets/images/team/Dhurva Rupesh Gharat National And Asian Champion.jpg" loading="lazy"><h3>Dhurva Rupesh Gharat</h3><p>National And Asian Champion</p>
+<img src="assets/images/team/Dhurva Rupesh Gharat National And Asian Champion.jpg" loading="lazy" alt="Dhurva Rupesh Gharat"><h3>Dhurva Rupesh Gharat</h3><p>National And Asian Champion</p>
 </div>
 </div>
 </section>
 
-<!-- EVENT -->
 <section class="event-banner">
 <h2>Upcoming Championship</h2>
 <p>Raigad District Mixboxing Championship 2026</p>
-<a class="event-register" href="contact-us.html">Register Now <span class="arrow" aria-hidden="true">></span></a>
+<a class="event-register" href="contact-us.html">Register Now <span class="arrow" aria-hidden="true">&#8250;</span></a>
 </section>
 
-<footer>© 2026 Raigad Mixboxing Association</footer>
+<footer class="site-footer">
+<div class="site-footer-inner">
+  <div class="footer-brand">
+    <div class="footer-brand-top">
+      <img src="assets/images/logos/rmbf.png" loading="lazy" alt="RMBA Logo">
+      <span class="footer-brand-name">Raigad Mix Boxing Association</span>
+    </div>
+    <p class="footer-tagline">Promoting mix boxing sport, developing young fighters and organizing district championships across Raigad and Maharashtra since 2016.</p>
+  </div>
+  <div class="footer-col">
+    <h4>Quick Links</h4>
+    <ul class="footer-links">
+      <li><a href="about-us.html">About Us</a></li>
+      <li><a href="organiser.html">Organisation</a></li>
+      <li><a href="founder.html">Founder</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="calendar.html">Calendar</a></li>
+      <li><a href="contact-us.html">Contact Us</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Contact</h4>
+    <ul class="footer-contact-list">
+      <li>&#128222; <a href="tel:+918796231590">+91 87962 31590</a></li>
+      <li>&#9993; <a href="mailto:raigadmixboxing@gmail.com">raigadmixboxing@gmail.com</a></li>
+      <li>&#128205; Raigad, Maharashtra, India</li>
+      <li>&#128172; <a href="https://wa.me/8796231590">WhatsApp Us</a></li>
+    </ul>
+  </div>
+</div>
+<div class="footer-bottom">&copy; 2026 Raigad Mix Boxing Association. All rights reserved.</div>
+</footer>
 
 <script>
-window.addEventListener("load",()=>{
-document.getElementById("preloader").style.display="none";
-setTimeout(()=>{document.body.classList.add("punched");},600);
-});
-
-function toggleMenu(){
-document.getElementById("navMenu").classList.toggle("active");}
-
-document.querySelectorAll("#navMenu a").forEach(link=>{
-link.addEventListener("click",()=>{
-document.getElementById("navMenu").classList.remove("active");
-});
+window.addEventListener("load", function () {
+  var preloader = document.getElementById("preloader");
+  if (preloader) preloader.style.display = "none";
 });
 </script>
 
 <script defer src="assets/js/site-enhancements.js"></script>
+<script defer src="assets/js/parallax.js"></script>
 </body>
 </html>

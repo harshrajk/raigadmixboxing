@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="dark">
 <head>
 <title>Gallery - Raigad Mix-Boxing Association</title>
 
@@ -33,10 +33,10 @@
 /* BODY */
 body{
 margin:0;
-font-family:Arial, sans-serif;
+font-family:var(--font-body);
 background:
-radial-gradient(950px 420px at 12% 0%, rgba(255,0,0,0.22), transparent 72%),
-linear-gradient(135deg,#000000,#0b0b0b,#140000);
+radial-gradient(900px 360px at 12% 0%, rgba(185,28,28,0.10), transparent 70%),
+linear-gradient(160deg, #0c0f14, #0e1218);
 color:white;
 }
 
@@ -73,9 +73,9 @@ font-weight:bold;
 
 /* TITLE */
 .gallery-title{
-color:#FFD700;
-font-size:52px;
-font-family:Georgia;
+color:var(--color-gold);
+font-size:48px;
+font-family:var(--font-display);
 margin-top:14px;
 text-align:center;
 letter-spacing:2px;
@@ -95,7 +95,7 @@ margin:14px auto 18px;
 grid-column:1/-1;
 text-align:center;
 font-size:22px;
-color:#FFD700;
+color:var(--color-gold);
 margin-bottom:6px;
 line-height:1.5;
 letter-spacing:.02em;
@@ -118,29 +118,26 @@ box-shadow:0 12px 24px rgba(0,0,0,0.32);
 .gallery-item{
 position:relative;
 width:100%;
-aspect-ratio:4/3; /* 3:4 horizontal */
 overflow:hidden;
 border-radius:12px;
 background:#111;
-border:1px solid rgba(255,215,0,0.3);
+border:1px solid rgba(255,255,255,0.08);
 transition:0.4s;
 }
 
 /* IMAGE */
 .gallery-item img{
 width:100%;
-height:100%;
-object-fit:cover;
+height:auto;
 display:block;
 transition:0.4s;
 	cursor:zoom-in;
-	filter:saturate(1.05) contrast(1.05);
 }
 
 /* HOVER */
 .gallery-item:hover{
 transform:translateY(-6px);
-box-shadow:0 0 20px rgba(255,215,0,0.6);
+box-shadow:0 6px 22px rgba(0,0,0,0.45);
 }
 
 .gallery-item:hover img{
@@ -216,7 +213,7 @@ font-size:16px;
 font-size:16px;
 }
 
-.gallery-title{font-size:36px;}
+.gallery-title{font-size:30px;}
 
 .contact-bar{
 flex-direction:column;
@@ -227,7 +224,7 @@ gap:10px;
 }
 
 </style>
-<link rel="stylesheet" href="assets/css/overhaul.css">
+<link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body class="bg-black text-white antialiased selection:bg-red-600/40 has-page-nav">
@@ -253,8 +250,17 @@ gap:10px;
 
 <div class="line rounded-full"></div>
 
+<!-- GALLERY FILTER -->
+<div class="gallery-filter" role="group" aria-label="Filter by championship year">
+<button class="gallery-filter-btn active" data-filter="all">All</button>
+<button class="gallery-filter-btn" data-filter="2017">2017</button>
+<button class="gallery-filter-btn" data-filter="2023">2023</button>
+<button class="gallery-filter-btn" data-filter="2024">2024</button>
+<button class="gallery-filter-btn" data-filter="2025">2025</button>
+</div>
+
 <!-- GALLERY -->
-<div class="gallery">
+<div class="gallery gallery-masonry" data-year="2017">
 
 <h3 class="section-title">
 1st Raigad District Mix Boxing Championship Roha<br>
@@ -262,25 +268,25 @@ Date- 20 August 2017
 </h3>
 <p class="event-meta">Roha, Raigad</p>
 
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p1 2.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p2 2.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p4 2.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p3 2.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p6 2.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p5 2.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p7 2.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p8 2.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p9 2.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p10 2.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p11 2.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p12 2.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p13 2.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p1 2.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p2 2.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p4 2.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p3 2.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p6 2.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p5 2.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p7 2.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p8 2.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p9 2.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p10 2.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p11 2.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p12 2.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p13 2.jpeg" loading="lazy" alt="Championship event photo"></div>
 
 
 </div>
 
 
-<div class="gallery">
+<div class="gallery gallery-masonry" data-year="2023">
 
 <h3 class="section-title">
 4th Raigad district mix boxing Championship
@@ -289,27 +295,27 @@ Date- 20 August 2017
 </h3>
 <p class="event-meta">Taluka Krida Sankul, Dhatav Roha MIDC</p>
 
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P1 1.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P2 1.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P3 1.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P4 1.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p5 1.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P6 1.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P7 1.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P8 1.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P9 1.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P10 1.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P11 1.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P12 1.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P13 1.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P14 1.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P15 1.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P1 1.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P2 1.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P3 1.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P4 1.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p5 1.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P6 1.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P7 1.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P8 1.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P9 1.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P10 1.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P11 1.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P12 1.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P13 1.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P14 1.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P15 1.jpeg" loading="lazy" alt="Championship event photo"></div>
 
 
 
 </div>
 
-<div class="gallery">
+<div class="gallery gallery-masonry" data-year="2024">
 
 <h3 class="section-title">
 5th Raigad District Mix Boxing Championship 2024 
@@ -317,24 +323,24 @@ Date- 20 August 2017
 </h3>
 <p class="event-meta">Goregaon Junior College, Mangaon</p>
 
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P1 3.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P2 3.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P3 3.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P4 3.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p5 3.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P6 3.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P7 3.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P8 3.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P9 3.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P10 3.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P11 3.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P12 3.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P13 3.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P1 3.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P2 3.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P3 3.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P4 3.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p5 3.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P6 3.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P7 3.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P8 3.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P9 3.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P10 3.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P11 3.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P12 3.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P13 3.jpeg" loading="lazy" alt="Championship event photo"></div>
 
 
 </div>
 
-<div class="gallery">
+<div class="gallery gallery-masonry" data-year="2025">
 
 <h3 class="section-title">
 6th Raigad district mix boxing championship 2025 
@@ -343,41 +349,41 @@ Address- Deep City Panvel
 </h3>
 <p class="event-meta">Deep City, Panvel</p>
 
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p1 4.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P2 4.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P3 4.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P4 4.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p5 4.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P6 4.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P7 4.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P8 4.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P9 4.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P10 4.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P11 4.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P12 4.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P13 4.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P14 4.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P15 4.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P16 4.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P17 4.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P18 4.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P19 4.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P20 4.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P21 4.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P22.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P24.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P26.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P27.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P28.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P29.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P30.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P31.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P32.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P33.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P34.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P35.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P36.jpeg" loading="lazy"></div>
-<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p37.jpeg" loading="lazy"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p1 4.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P2 4.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P3 4.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P4 4.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p5 4.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P6 4.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P7 4.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P8 4.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P9 4.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P10 4.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P11 4.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P12 4.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P13 4.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P14 4.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P15 4.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P16 4.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P17 4.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P18 4.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P19 4.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P20 4.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P21 4.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P22.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P24.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P26.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P27.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P28.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P29.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P30.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P31.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P32.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P33.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P34.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P35.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/P36.jpeg" loading="lazy" alt="Championship event photo"></div>
+<div class="gallery-item shadow-xl shadow-black/40"><img src="assets/images/gallery/p37.jpeg" loading="lazy" alt="Championship event photo"></div>
 <div class="gallery-item shadow-xl shadow-black/40"><video src="assets/videos/V1 4.mp4" controls></video></div>
 
 
@@ -399,6 +405,28 @@ Address- Deep City Panvel
 
 </div>
 
+
+<script>
+(function() {
+  var filterBtns = document.querySelectorAll('.gallery-filter-btn');
+  var galleries = document.querySelectorAll('.gallery[data-year]');
+
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var filter = btn.getAttribute('data-filter');
+      galleries.forEach(function(g) {
+        if (filter === 'all' || g.getAttribute('data-year') === filter) {
+          g.style.display = '';
+        } else {
+          g.style.display = 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
 <script defer src="assets/js/site-enhancements.js"></script>
 </body>
 </html>
